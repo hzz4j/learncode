@@ -1,0 +1,58 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: account-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.187.135:8848
+        namespace: b0748044-d986-470a-90d4-d463382fdc8b
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.187.135:3306/seata_account?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: Root.123456
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+seata:
+  tx-service-group: my_test_tx_group
+  registry:
+    type: nacos
+    nacos:
+      server-addr: 192.168.187.135:8848
+      namespace: b0748044-d986-470a-90d4-d463382fdc8b
+      group: SEATA_GROUP
+  config:
+    type: nacos
+    nacos:
+      server-addr: 192.168.187.135:8848
+      namespace: b0748044-d986-470a-90d4-d463382fdc8b
+      group: SEATA_GROUP
+

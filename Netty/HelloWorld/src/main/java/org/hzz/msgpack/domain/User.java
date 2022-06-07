@@ -1,0 +1,62 @@
+package org.hzz.msgpack.domain;
+
+import org.msgpack.annotation.Message;
+
+@Message
+public class User {
+    private String id;
+    private String userName;
+    private int age;
+    private UserContact userContact;
+
+    public User(String userName, int age, String id) {
+        this.userName = userName;
+        this.age = age;
+        this.id = id;
+    }
+
+    public User() {
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public UserContact getUserContact() {
+        return userContact;
+    }
+
+    public void setUserContact(UserContact userContact) {
+        this.userContact = userContact;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", age=" + age +
+                ", id='" + id + '\'' +
+                ", userContact=" + userContact +
+                '}';
+    }
+}

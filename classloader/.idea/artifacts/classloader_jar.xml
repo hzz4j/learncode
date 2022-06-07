@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="classloader:jar">
+    <output-path>$PROJECT_DIR$/myjars</output-path>
+    <root id="archive" name="classloader.jar">
+      <element id="module-output" name="classloader" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven repository" />
+        <option name="mavenHome" value="E:/maven-3.8.2" />
+        <option name="userSettingsFile" value="E:\maven-3.8.2\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="293PhAXr9CBk0q5KNyOLwBvJxrG" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.hzz.aop.adapter" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\learncode\javabasic\libs" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.hzz.aop.advice.impl" />
+      <recent name="org.hzz.aop.annotations" />
+      <recent name="org.hzz.aop.adapter" />
+      <recent name="org.hzz.aop.interceptor.impl" />
+      <recent name="org.hzz.aop.advice" />
+    </key>
+  </component>
+  <component name="RunManager" selected="应用程序.MyAopTestMain">
+    <configuration name="MainTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.lambd.MainTest" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.lambd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallOrderService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.udp.MallOrderService" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.udp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MallOrderService2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.udp.MallOrderService2" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.udp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyAopTestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.aop.MyAopTestMain" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.aop.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NacosServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.udp.NacosServer" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.udp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.MyAopTestMain" />
+        <item itemvalue="应用程序.MainTest (1)" />
+        <item itemvalue="应用程序.NacosServer" />
+        <item itemvalue="应用程序.MallOrderService2" />
+        <item itemvalue="应用程序.MallOrderService" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="" />
+      <created>1652338913329</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652338913329</updated>
+      <workItem from="1652338914928" duration="5000" />
+      <workItem from="1652339008432" duration="428000" />
+      <workItem from="1652519561903" duration="2100000" />
+      <workItem from="1652591656513" duration="603000" />
+      <workItem from="1653412394211" duration="207000" />
+      <workItem from="1653412692550" duration="2694000" />
+      <workItem from="1653457574230" duration="11000" />
+      <workItem from="1653496763777" duration="634000" />
+      <workItem from="1653497500239" duration="3072000" />
+      <workItem from="1653502431450" duration="7000" />
+      <workItem from="1653854378219" duration="834000" />
+      <workItem from="1653883248375" duration="1312000" />
+      <workItem from="1653910276586" duration="53000" />
+      <workItem from="1653922294895" duration="9332000" />
+      <workItem from="1654056816059" duration="18471000" />
+      <workItem from="1654084180697" duration="239000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/hzz/aop/interceptor/Chain.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,15 @@
+#spring:
+#  security:
+#    user:
+#      password: root.123456
+#      name: hzz
+
+
+spring:
+  redis:
+    host: 192.168.187.135
+    port: 6379
+  session:
+    store-type: redis
+server:
+  port: 8081

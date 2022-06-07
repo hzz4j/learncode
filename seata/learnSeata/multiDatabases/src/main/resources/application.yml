@@ -1,0 +1,29 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: multi-datasource-service
+  datasource:
+    # Order
+    order:
+      url: jdbc:mysql://192.168.187.135:3306/seata_order?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+      username: root
+      password: Root.123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    # Order
+    storage:
+      url: jdbc:mysql://192.168.187.135:3306/seata_storage?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+      username: root
+      password: Root.123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    # Order
+    account:
+      url: jdbc:mysql://192.168.187.135:3306/seata_account?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=UTC
+      username: root
+      password: Root.123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: my_test_tx_group

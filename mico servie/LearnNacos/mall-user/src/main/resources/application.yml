@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: mall-user  #微服务名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.187.135:8848
+        namespace: 0a302a3c-3162-444c-9839-e8f7af2ff605
