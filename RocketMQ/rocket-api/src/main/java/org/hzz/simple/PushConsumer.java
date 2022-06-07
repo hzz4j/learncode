@@ -1,0 +1,65 @@
+package org.hzz.simple;
+
+import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
+import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyContext;
+import org.apache.rocketmq.client.consumer.listener.ConsumeConcurrentlyStatus;
+import org.apache.rocketmq.client.consumer.listener.MessageListenerConcurrently;
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.common.message.MessageExt;
+import org.hzz.consts.Addr;
+
+import java.util.List;
+
+public class PushConsumer {
+    public static void main(String[] args) throws MQClientException {
+        consumer1();
+        consumer2();
+        consumer3();
+    }
+
+    public static void consumer1() throws MQClientException {
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("basic_sync_consumer_group_1");
+        consumer.setNamesrvAddr(Addr.NAME_SERVER_ADDR);
+        consumer.subscribe("basic_sync_topic","*");
+        consumer.registerMessageListener(new MessageListenerConcurrently() {
+            @Override
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
+                System.out.printf("Consumer1->%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
+                return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
+            }
+        });
+
+        consumer.start();
+        System.out.println("Conumser1 started.");
+    }
+
+    public static void consumer2() throws MQClientException {
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("basic_sync_consumer_group_2");
+        consumer.setNamesrvAddr(Addr.NAME_SERVER_ADDR);
+        consumer.subscribe("basic_sync_topic","*");
+        consumer.registerMessageListener(new MessageListenerConcurrently() {
+            @Override
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
+                System.out.printf("Consumer2->%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
+                return ConsumeConcurrentlyStatus.RECONSUME_LATER;
+            }
+        });
+        consumer.start();
+        System.out.println("Conumser2 started.");
+    }
+
+    public static void consumer3() throws MQClientException {
+        DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("basic_sync_consumer_group_3");
+        consumer.setNamesrvAddr(Addr.NAME_SERVER_ADDR);
+        consumer.subscribe("basic_sync_topic","*");
+        consumer.registerMessageListener(new MessageListenerConcurrently() {
+            @Override
+            public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> msgs, ConsumeConcurrentlyContext context) {
+                System.out.printf("Consumer3->%s Receive New Messages: %s %n", Thread.currentThread().getName(), msgs);
+                return null;
+            }
+        });
+        consumer.start();
+        System.out.println("Conumser3 started.");
+    }
+}
