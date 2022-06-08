@@ -1,0 +1,5 @@
+#NameServer地址
+rocketmq:
+  name-server: 192.168.187.135:9876 #;192.168.187.130:9876;192.168.187.132:9876;
+  producer:
+    group: springboot_consumer_group  #默认的消息生产者组
