@@ -1,9 +1,9 @@
 package org.hzz.service.impl;
 
 import io.seata.core.context.RootContext;
-import io.seata.core.exception.TransactionException;
 import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.hzz.entity.Order;
 import org.hzz.entity.OrderStatus;
 import org.hzz.feign.AccountFeignService;
@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class OrderServiceImpl implements OrderService {
+    @Autowired
+    private SqlSessionFactory sqlSessionFactory;
 
     @Autowired
     private OrderMapper orderMapper;
@@ -30,6 +32,7 @@ public class OrderServiceImpl implements OrderService {
     //@Transactional
     @GlobalTransactional(name="createOrder")
     public Order saveOrder(OrderVo orderVo) {
+        System.out.println(sqlSessionFactory.getConfiguration().getEnvironment().getDataSource());
         log.info("=============用户下单=================");
         log.info("当前 XID: {}", RootContext.getXID());
 

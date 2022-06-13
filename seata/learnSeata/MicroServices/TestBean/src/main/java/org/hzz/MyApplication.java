@@ -5,7 +5,6 @@ import io.seata.rm.datasource.DataSourceProxy;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
@@ -17,14 +16,9 @@ public class MyApplication {
     public static void main(String[] args) {
         SpringApplication springApplication = new SpringApplication(MyApplication.class);
         AnnotationConfigApplicationContext context = (AnnotationConfigApplicationContext)springApplication.run(args);
-        System.out.println("Hello World");
-        Object user = context.getBean("user");
-        System.out.println(user);
-        Object bean = context.getBean("dataSourceProxy1");
-        System.out.println(bean.getClass());
-        Object bean2 = context.getBean("druidDataSource");
-        System.out.println(bean2.getClass());
-        System.out.println(bean == bean2);
+        Object bean1 = context.getBean("druidDataSource");
+        Object bean2 = context.getBean("dataSourceProxy1");
+        System.out.println(bean1 == bean2); // true
     }
 
     @Bean(name = "druidDataSource")
@@ -46,11 +40,6 @@ public class MyApplication {
         System.out.println("create dataSourceProxy");
         DataSourceProxy dataSourceProxy = new DataSourceProxy(druidDataSource);
         return dataSourceProxy;
-    }
-
-    @Bean
-    public User user(){
-        return new User();
     }
 
 }

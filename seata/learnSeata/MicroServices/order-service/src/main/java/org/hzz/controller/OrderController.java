@@ -1,6 +1,7 @@
 package org.hzz.controller;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.hzz.entity.Order;
 import org.hzz.service.OrderService;
 import org.hzz.vo.OrderVo;
@@ -19,8 +20,12 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @Autowired
+    private SqlSessionFactory sqlSessionFactory;
+
     @PostMapping("/createOrder")
     public ResultVo createOrder(@RequestBody OrderVo orderVo) throws Exception {
+        System.out.println(sqlSessionFactory.getConfiguration().getEnvironment().getDataSource());
         log.info("收到下单请求,用户:{}, 商品编号:{}", orderVo.getUserId(), orderVo.getCommodityCode());
         Order order = orderService.saveOrder(orderVo);
         return ResultVo.ok().put("order",order);
