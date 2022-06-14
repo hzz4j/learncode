@@ -196,6 +196,7 @@ public class MQClientInstance {
                     }
 
                     for (int i = 0; i < qd.getWriteQueueNums(); i++) {
+                        // 创建写队列
                         MessageQueue mq = new MessageQueue(topic, qd.getBrokerName(), i);
                         info.getMessageQueueList().add(mq);
                     }
