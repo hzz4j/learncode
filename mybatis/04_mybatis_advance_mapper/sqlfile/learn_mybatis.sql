@@ -11,7 +11,7 @@
  Target Server Version : 80027
  File Encoding         : 65001
 
- Date: 07/08/2022 17:54:21
+ Date: 07/08/2022 19:00:08
 */
 
 SET NAMES utf8mb4;
@@ -49,5 +49,6 @@ CREATE TABLE `emp`  (
 -- ----------------------------
 INSERT INTO `emp` VALUES (1, 'q10viking', 1);
 INSERT INTO `emp` VALUES (3, 'hzz', 2);
+INSERT INTO `emp` VALUES (4, '静默', 2);
 
 SET FOREIGN_KEY_CHECKS = 1;
