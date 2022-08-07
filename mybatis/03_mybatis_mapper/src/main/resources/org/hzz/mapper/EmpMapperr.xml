@@ -7,8 +7,24 @@
     <select id="selectEmp" resultType="org.hzz.pojo.Emp">
         select *
         from emp
-        where id = #{id}
+        where id = #{id} and username=#{username}
+        <!--        where id = #{param1} and username=#{param2} -->
+        <!--        where id = #{arg0} and username=#{arg1} -->
     </select>
+
+
+    <select id="selectEmpByJavaBean" resultType="org.hzz.pojo.Emp">
+        select *
+        from emp
+        where id = #{id} and username=#{emp.username}
+    </select>
+
+    <select id="selectEmpByMap" resultType="org.hzz.pojo.Emp">
+        select *
+        from emp
+        where id = #{id} and username=#{username}
+    </select>
+
     <!--
      useGeneratedKeys 获取插入后的自动增长的主键（mysql 和 SQL Server ）
      keyProperty  将自动增长的主键赋值到哪个属性中

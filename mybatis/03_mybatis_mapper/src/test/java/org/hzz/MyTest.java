@@ -11,6 +11,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MyTest {
     private static final String configFile = "mybatis-config.xml";
@@ -26,7 +28,32 @@ public class MyTest {
     public void selectTest(){
         try(SqlSession sqlSession = sqlSessionFactory.openSession()){
             EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
-            Emp emp = mapper.selectEmp(5);
+            Emp emp = mapper.selectEmp(1,"q10viking");
+            System.out.println(emp);
+        }
+    }
+
+    @Test
+    public void selectTestJavaBean(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+            Emp e = new Emp();
+            e.setUsername("q10viking");
+            Emp emp = mapper.selectEmpByJavaBean(1,e);
+            System.out.println(emp);
+        }
+    }
+
+
+    @Test
+    public void selectTestMap(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+            Map<String,Object> map = new HashMap<String,Object>(){{
+                put("id",1);
+                put("username","q10viking");
+            }};
+            Emp emp = mapper.selectEmpByMap(map);
             System.out.println(emp);
         }
     }
