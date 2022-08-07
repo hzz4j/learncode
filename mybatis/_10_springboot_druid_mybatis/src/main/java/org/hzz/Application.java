@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("org.hzz.mapper")
+@MapperScan("org.hzz.mapper") // 扫描mapper
 public class Application implements CommandLineRunner {
     @Autowired
     private EmpMapper empMapper;
@@ -20,7 +20,6 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Hello World");
         Emp emp = empMapper.selectByPrimaryKey(1);
         System.out.println(emp);
     }
