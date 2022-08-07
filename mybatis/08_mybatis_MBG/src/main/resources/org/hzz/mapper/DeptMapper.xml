@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hzz.mapper.DeptMapper">
+  <resultMap id="BaseResultMap" type="org.hzz.pojo.Dept">
+    <id column="dept_id" jdbcType="INTEGER" property="deptId" />
+    <result column="dept_name" jdbcType="VARCHAR" property="deptName" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dept
+    where dept_id = #{deptId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="org.hzz.pojo.Dept">
+    insert into dept (dept_id, dept_name)
+    values (#{deptId,jdbcType=INTEGER}, #{deptName,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="org.hzz.pojo.Dept">
+    update dept
+    set dept_name = #{deptName,jdbcType=VARCHAR}
+    where dept_id = #{deptId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select dept_id, dept_name
+    from dept
+    where dept_id = #{deptId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select dept_id, dept_name
+    from dept
+  </select>
+</mapper>
