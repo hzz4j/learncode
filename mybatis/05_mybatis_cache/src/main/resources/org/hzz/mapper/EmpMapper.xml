@@ -12,4 +12,8 @@
     <select id="selectEmpByDept" resultMap="BaseEmpResultMap">
         select * from emp where dept_id = #{dept_id}
     </select>
+
+    <insert id="insertEmp">
+        insert into emp(username) value (#{username})
+    </insert>
 </mapper>

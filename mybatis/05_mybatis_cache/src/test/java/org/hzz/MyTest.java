@@ -58,5 +58,45 @@ public class MyTest {
         }
     }
 
+    @Test
+    public void test03(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+            Dept dept1 = new Dept();
+            dept1.setDeptId(1);
+            mapper.selectDept(dept1);
+
+            Dept dept2 = new Dept();
+            //dept2.setDeptId(1);  // 会走一级缓存
+            dept2.setDeptName("经理"); // 缓存失效
+            mapper.selectDept(dept2);
+        }
+    }
+
+
+
+    @Test
+    public void test04(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+            Dept dept1 = new Dept();
+            dept1.setDeptId(1);
+            mapper.selectDept(dept1);
+
+            // 执行了增删改的操作
+            EmpMapper empMapper = sqlSession.getMapper(EmpMapper.class);
+            Emp emp = new Emp();
+            emp.setUsername("cache");
+            empMapper.insertEmp(emp);
+
+            Dept dept2 = new Dept();
+            dept2.setDeptId(1);
+            mapper.selectDept(dept2);
+            sqlSession.commit();
+            
+        }
+    }
+
+
 
 }
