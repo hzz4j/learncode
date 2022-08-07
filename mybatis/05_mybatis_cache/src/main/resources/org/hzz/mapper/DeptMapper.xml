@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hzz.mapper.DeptMapper">
+    <resultMap id="BaseResultMap" type="org.hzz.pojo.Dept">
+        <id column="dept_id" property="deptId"></id>
+        <result column="dept_name" property="deptName"></result>
+    </resultMap>
+
+
+    <select id="selectDept" resultMap="BaseResultMap">
+        select * from dept
+        <where>
+            <if test="deptId!=null and deptId>0">
+                and dept_id = #{deptId}
+            </if>
+            <if test="deptName!=null and deptName!=''">
+                and dept_name = #{deptName}
+            </if>
+        </where>
+    </select>
+</mapper>
