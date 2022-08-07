@@ -1,0 +1,36 @@
+spring:
+  sql:
+    init:
+      schema-locations: classpath:sql/schema.sql
+#      mode: always
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: Root.123456
+    url: jdbc:mysql://192.168.187.135:3306/springboot_mybatis?characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    #druid???????
+    druid:   # ????
+      initialSize: 5  # ?????????????
+      minIdle: 5
+      maxActive: 21
+      maxWait: 5
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      filters: stat,wall
+      maxPoolPreparedStatementPerConnectionSize: 20
+      useGlobalDataSourceStat: true
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+      stat-view-servlet:
+        enabled: true
+        login-password: 123456
+        login-username: admin
+      web-stat-filter:
+        enabled: true
+
+
