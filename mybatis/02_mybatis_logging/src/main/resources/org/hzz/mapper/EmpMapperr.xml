@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hzz.mapper.EmpMapper">
+
+    <select id="selectEmp" resultType="org.hzz.pojo.Emp">
+        select *
+        from emp
+        where id = #{id}
+    </select>
+    <insert id="insertEmp">
+        insert
+        into emp(username) values(
+                                     #{username}
+                                 )
+    </insert>
+
+    <update id="updateEmp">
+        update emp
+        set username=#{username}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEmp">
+        delete
+        from emp
+        where id = #{id}
+    </delete>
+</mapper>
