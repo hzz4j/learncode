@@ -4,7 +4,9 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.hzz.mapper.DeptMapper;
 import org.hzz.mapper.EmpMapper;
+import org.hzz.pojo.DeptEmpDTO;
 import org.hzz.pojo.Emp;
 import org.hzz.pojo.EmpDeptDTO;
 import org.junit.Before;
@@ -50,6 +52,24 @@ public class MyTest {
             EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
             List<EmpDeptDTO> empDeptDTOS = mapper.selectEmpAndDeptUseAssociation();
             System.out.println(empDeptDTOS);
+        }
+    }
+
+    @Test
+    public void selectDeptAndEmp(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+            List<DeptEmpDTO> deptEmpDTOS = mapper.selectDeptAndEmp();
+            System.out.println(deptEmpDTOS);
+        }
+    }
+
+    @Test
+    public void nestingQuery(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+            List<DeptEmpDTO> deptEmpDTOS = mapper.nestingQuery();
+            System.out.println(deptEmpDTOS);
         }
     }
 

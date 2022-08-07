@@ -7,4 +7,43 @@
         <id column="dept_id" property="deptId"></id>
         <result column="dept_name" property="deptName"></result>
     </resultMap>
+
+    <resultMap id="query_dept_emp" type="org.hzz.pojo.DeptEmpDTO"
+               extends="BaseResultMap">
+        <!--
+        <collection  映射一对多中的 “多”
+            property 指定需要映射的“多”的属性，一般声明为List
+            ofType  需要指定list的泛型类型
+            无论是使用collection还是association都必须查询id,以便mybatis进行组织
+        -->
+        <collection property="empList" ofType="org.hzz.pojo.Emp">
+            <result column="username" property="username"></result>
+        </collection>
+    </resultMap>
+    <select id="selectDeptAndEmp" resultMap="query_dept_emp">
+        SELECT
+            D.dept_id,
+            D.dept_name,
+            E.username
+        FROM
+            dept D
+                LEFT JOIN emp E ON D.dept_id = E.dept_id;
+    </select>
+
+    <resultMap id="nestingMap" type="org.hzz.pojo.DeptEmpDTO" extends="BaseResultMap">
+        <!--
+        <collection  映射一对多中的 “多”
+            property 指定需要映射的“多”的属性，一般声明为List
+            ofType  需要指定list的类型
+            column 需要将当前查询的字段传递到异步查询的参数
+            select 指定异步查询
+        -->
+        <collection column="dept_id" property="empList" ofType="org.hzz.pojo.Emp"
+            select="org.hzz.mapper.EmpMapper.selectEmpByDept">
+        </collection>
+    </resultMap>
+
+    <select id="nestingQuery" resultMap="nestingMap">
+        select * from dept
+    </select>
 </mapper>
