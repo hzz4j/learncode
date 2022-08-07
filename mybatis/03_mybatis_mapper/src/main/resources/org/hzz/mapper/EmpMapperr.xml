@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hzz.mapper.EmpMapper">
+
+    <select id="selectEmp" resultType="org.hzz.pojo.Emp">
+        select *
+        from emp
+        where id = #{id}
+    </select>
+    <!--
+     useGeneratedKeys 获取插入后的自动增长的主键（mysql 和 SQL Server ）
+     keyProperty  将自动增长的主键赋值到哪个属性中
+    -->
+    <insert id="insertEmp" useGeneratedKeys="true" keyProperty="id">
+        insert
+        into emp(username) values(
+                                     #{username}
+                                 )
+    </insert>
+
+    <insert id="insertEmpHasSelectKey" useGeneratedKeys="true" keyProperty="id">
+        <!--
+            如果数据库不支持自动增长列可以使用下面方法：
+            selectKey 可以在增删改之前或之后运行
+            order BEFORE|AFTER 设置在增删改之前或之后运行
+            keyProperty 将当前查询结果放到哪个pojo属性中
+            resultType 返回的数据类型
+        -->
+        <selectKey order="BEFORE" keyProperty="id" resultType="int">
+            SELECT MAX(id)+2  FROM emp
+        </selectKey>
+        insert
+        into emp(id,username) values(
+                                     #{id},
+                                     #{username}
+                                 )
+    </insert>
+
+    <update id="updateEmp">
+        update emp
+        set username=#{username}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteEmp">
+        delete
+        from emp
+        where id = #{id}
+    </delete>
+</mapper>
