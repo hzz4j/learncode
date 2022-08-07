@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hzz.mapper.EmpMapper">
+
+    <select id="selectEmpById" resultType="org.hzz.pojo.Emp">
+        select  * from emp where id = #{id}
+    </select>
+
+    <resultMap id="query_emp_dept_map" type="org.hzz.pojo.EmpDeptDTO">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="dept_id" property="deptId"></result>
+        <result column="dept_id" property="dept.deptId"></result>
+        <result column="dept_name" property="dept.deptName"></result>
+    </resultMap>
+    <select id="selectEmpAndDept" resultMap="query_emp_dept_map">
+        SELECT
+            E.*,
+            D.dept_name
+        FROM
+            emp E
+                LEFT JOIN dept D ON E.dept_id = D.dept_id
+    </select>
+
+
+    <resultMap id="query_emp_dept_map2" type="org.hzz.pojo.EmpDeptDTO">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="dept_id" property="deptId"></result>
+        <!--
+        association 实现多对一中的  “一”
+            property 指定对象中的嵌套对象属性
+            javaType 声明property的类型
+            resultMap: 复用映射，DeptMapper的namespace.resultMap的id
+        -->
+        <association property="dept" javaType="org.hzz.pojo.Dept"
+                     resultMap="org.hzz.mapper.DeptMapper.BaseResultMap">
+        </association>
+    </resultMap>
+    <select id="selectEmpAndDeptUseAssociation" resultMap="query_emp_dept_map2">
+        SELECT
+            E.*,
+            D.dept_name
+        FROM
+            emp E
+                LEFT JOIN dept D ON E.dept_id = D.dept_id
+    </select>
+
+</mapper>

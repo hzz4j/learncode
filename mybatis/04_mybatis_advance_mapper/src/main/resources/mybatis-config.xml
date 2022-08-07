@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <properties resource="db-config.properties">
+    </properties>
+    <typeAliases>
+        <package name="org.hzz.pojo"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <package name="org.hzz.mapper"/>
+<!--        <mapper resource="EmpMapper.xml"/>-->
+
+<!--   接口绑定方式找到mapper.xml的两种方式     -->
+<!--        <mapper resource="org/hzz/mapper/EmpMapper.xml"/>-->
+<!--        <mapper class="org.hzz.mapper.EmpMapper"/>-->
+<!--        <mapper class="org.hzz.mapper.DeptMapper"/>-->
+
+    </mappers>
+</configuration>
