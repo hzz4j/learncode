@@ -12,6 +12,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MyTest {
@@ -57,6 +58,34 @@ public class MyTest {
             System.out.println(emp);
         }
     }
+
+    @Test
+    public void selectTestReturnMap(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+            Map map = mapper.selectEmpReturnMap(1);
+            System.out.println(map);
+        }
+    }
+
+    @Test
+    public void selectTestReturnListMap(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+            List<Map> maps = mapper.selectEmpReturnListMap();
+            System.out.println(maps);
+        }
+    }
+
+    @Test
+    public void selectTestById(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
+            Emp emp = mapper.selectEmpById(1);
+            System.out.println(emp);
+        }
+    }
+
 
     @Test
     public void insert(){

@@ -13,6 +13,16 @@
     </select>
 
 
+    <resultMap id="emp_map" type="emp">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+    </resultMap>
+    <select id="selectEmpById" resultMap="emp_map">
+        select *
+        from emp
+        where id = #{id}
+    </select>
+
     <select id="selectEmpByJavaBean" resultType="org.hzz.pojo.Emp">
         select *
         from emp
@@ -25,6 +35,16 @@
         where id = #{id} and username=#{username}
     </select>
 
+    <select id="selectEmpReturnMap" resultType="map">
+        select *
+        from emp
+        where id = #{id}
+    </select>
+
+    <select id="selectEmpReturnListMap" resultType="map">
+        select *
+        from emp
+    </select>
     <!--
      useGeneratedKeys 获取插入后的自动增长的主键（mysql 和 SQL Server ）
      keyProperty  将自动增长的主键赋值到哪个属性中
