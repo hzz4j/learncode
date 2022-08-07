@@ -93,10 +93,52 @@ public class MyTest {
             dept2.setDeptId(1);
             mapper.selectDept(dept2);
             sqlSession.commit();
-            
+
         }
     }
 
 
+    @Test
+    public void test05(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+            Dept dept1 = new Dept();
+            dept1.setDeptId(1);
+            mapper.selectDept(dept1);
+
+            // 存储二级缓存
+            sqlSession.commit();
+
+            Dept dept2 = new Dept();
+            dept2.setDeptId(1);
+            mapper.selectDept(dept2); // 会走二级缓存
+        }
+    }
+
+
+    @Test
+    public void test06(){
+        try(SqlSession sqlSession = sqlSessionFactory.openSession()){
+            DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+            Dept dept1 = new Dept();
+            dept1.setDeptId(1);
+            mapper.selectDept(dept1);
+
+            // 事务提交，存储二级缓存
+            sqlSession.commit();
+
+            // 执行了增删改的操作 Emp里面有cache-ref
+            EmpMapper empMapper = sqlSession.getMapper(EmpMapper.class);
+            Emp emp = new Emp();
+            emp.setUsername("cache");
+            empMapper.insertEmp(emp);
+            sqlSession.commit(); // 需要提交
+
+            Dept dept2 = new Dept();
+            dept2.setDeptId(1);
+            mapper.selectDept(dept2);
+
+        }
+    }
 
 }
