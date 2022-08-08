@@ -1,0 +1,13 @@
+spring:
+  redis:
+    timeout: 3000
+    database: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.187.135:26379,192.168.187.135:26380,192.168.187.135:26381
+    lettuce:    # springboot????redis????lettuce??jedis
+      pool:
+        max-active: 100
+        max-idle: 50
+        min-idle: 10
+        max-wait: 1000
