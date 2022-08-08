@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tuling.mapper.UserMapper">
+    <!--<cache ></cache>-->
+    <!-- Mybatis 是如何将 sql 执行结果封装为目标对象并返回的？都有哪些映射形式？-->
+    <resultMap id="result" type="com.tuling.entity.User">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_name" jdbcType="VARCHAR" property="userName"/>
+        <result column="create_time" jdbcType="DATE" property="createTime"/>
+        <!--<collection property="" select=""-->
+    </resultMap>
+
+
+    <select id="selectById" resultMap="result"  >
+        select id,user_name,create_time from t_user
+        <where>
+            <if test="id > 0">
+                and id=#{id}
+            </if>
+        </where>
+    </select>
+
+    <select id="updateForName"  >
+        update t_user
+        <set>
+            ,user_name=#{arg1}
+        </set>
+        where id=#{arg0}
+    </select>
+    <!--
+      动态sql数据源  需要在调用crud 解析sql
+      静态sql数据源        解析CURD节点的就会把sql解析好
+
+      1  select id,user_name,create_time from t_user where id=1   动态
+
+      2  select id,user_name,create_time from t_user where id= ?   静态
+
+      3  select id,user_name,create_time from t_user
+      <where>
+         <if test="id>0">
+         and id=${id}
+         </if>
+      </where>
+      动态
+    -->
+</mapper>
