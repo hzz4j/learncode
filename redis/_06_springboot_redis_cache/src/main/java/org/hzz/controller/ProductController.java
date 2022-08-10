@@ -35,4 +35,28 @@ public class ProductController {
         Product product = productService.getProductV2(id);
         return product;
     }
+
+    @GetMapping("/v3/get")
+    public Product getV3(Integer id){
+        Product product = productService.getProductV3(id);
+        return product;
+    }
+
+    @GetMapping("/v4/get")
+    public Product getV4(Integer id){
+        Product product = productService.getProductV4(id);
+        return product;
+    }
+
+    @GetMapping("/v5/get")
+    public Product getV5(Integer id){
+        Product product = productService.getProductV5(id);
+        return product;
+    }
+
+    @GetMapping("/v6/get")
+    public Product getV6(Integer id){
+        Product product = productService.getProductV5(id);
+        return product;
+    }
 }
