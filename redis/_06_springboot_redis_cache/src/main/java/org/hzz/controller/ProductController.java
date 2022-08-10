@@ -29,4 +29,10 @@ public class ProductController {
         Product product = productService.getProductV1(id);
         return product;
     }
+
+    @GetMapping("/v2/get")
+    public Product getV2(Integer id){
+        Product product = productService.getProductV2(id);
+        return product;
+    }
 }
