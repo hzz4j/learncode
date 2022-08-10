@@ -59,4 +59,10 @@ public class ProductController {
         Product product = productService.getProductV5(id);
         return product;
     }
+
+    @GetMapping("/v7/get")
+    public Product getV7(Integer id){
+        Product product = productService.getProductV7(id);
+        return product;
+    }
 }

@@ -7,6 +7,7 @@ import org.hzz.util.RedisKeyPrefixConst;
 import org.hzz.util.RedisUtil;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
+import org.redisson.api.RReadWriteLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ public class ProductService {
     // 缓存的操作时间
     public static final Integer PRODUCT_CACHE_TIMEOUT = 60 * 60 * 24;
     private Logger logger = LoggerFactory.getLogger(ProductService.class);
+    private static final String LOCK_PRODUCT_UPDATE_PREFIX = "lock:product:update:";
 
 
     @Autowired
@@ -36,7 +38,18 @@ public class ProductService {
     }
 
     public void updateProduct(Product product){
-        productMapper.updateProduct(product);
+        String updateProductKey = LOCK_PRODUCT_UPDATE_PREFIX + product.getId();
+        String productKey = RedisKeyPrefixConst.PRODUCT_CACHE + product.getId();
+        RReadWriteLock readWriteLock = redisson.getReadWriteLock(updateProductKey);
+        RLock wLock = readWriteLock.writeLock();
+        try{
+            logger.info("获取到写锁，更新数据");
+            productMapper.updateProduct(product);
+            redisUtil.set(productKey,JSON.toJSONString(product),genProductCahceTimeout(),TimeUnit.SECONDS);
+        }finally {
+            logger.info("释放写锁");
+            wLock.unlock();
+        }
     }
 
     /**-------------------------------------------------------------------------------
@@ -206,6 +219,49 @@ public class ProductService {
         } finally {
             logger.info("释放锁");
             lock.unlock();
+        }
+    }
+
+    /**-------------------------------------------------------------------------------
+     *    简单版redis+db + 冷热分离 + 缓存击穿（失效）+ 缓存穿透
+     *    + 热点数据重建 + 锁优化 + 读写锁
+     *-------------------------------------------------------------------------------*/
+    public Product getProductV7(Integer id){
+        String productKey = RedisKeyPrefixConst.PRODUCT_CACHE+id;
+        String lockProductKey = LOCK_PRODUCT_HOT_CACHE_PREFIX + id;
+        String updateProductKey = LOCK_PRODUCT_UPDATE_PREFIX + id;
+        Product product = null;
+        product = getFromRedisCache(productKey);
+        if(product != null){
+            return product;
+        }
+
+        // 热点数据重建,可能有多个线程去重建，但是只需要一个线程建立就好
+        RLock hotCacheLock = redisson.getLock(lockProductKey);
+        // lock.lock();
+        try{
+            hotCacheLock.tryLock(1,TimeUnit.SECONDS);
+            logger.info("热点数据重建，双重检查");
+            product = getFromRedisCache(productKey);
+            if(product != null){
+                return product;
+            }
+            // 获取读锁
+            RReadWriteLock readWriteLock = redisson.getReadWriteLock(updateProductKey);
+            RLock rLock = readWriteLock.readLock();
+            try {
+                logger.info("获取到读锁执行");
+                return getFromDB(id);
+            }finally {
+                logger.info("释放读锁");
+                rLock.unlock();
+            }
+        } catch (InterruptedException e) {
+            logger.info("获取锁超时，直接从db获取");
+            return getFromDB(id);
+        } finally {
+            logger.info("释放锁");
+            hotCacheLock.unlock();
         }
     }
 
