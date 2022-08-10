@@ -1,8 +1,9 @@
 package org.hzz.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Product {
+public class Product implements Serializable {
     private Integer id;
     private String name;
     private BigDecimal price;

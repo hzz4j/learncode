@@ -31,6 +31,15 @@ spring:
         login-username: admin
       web-stat-filter:
         enabled: true
+  redis:
+    port: 6379
+    host: 192.168.187.135
+    lettuce:
+      pool:
+        max-active: 100
+        max-idle: 50
+        min-idle: 10
+        max-wait: 1000
 mybatis:
   mapper-locations: classpath:org/hzz/mapper/*.xml
   configuration:
