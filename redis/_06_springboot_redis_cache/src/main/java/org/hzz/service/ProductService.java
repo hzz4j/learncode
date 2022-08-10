@@ -13,7 +13,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -22,7 +24,7 @@ public class ProductService {
     public static final Integer PRODUCT_CACHE_TIMEOUT = 60 * 60 * 24;
     private Logger logger = LoggerFactory.getLogger(ProductService.class);
     private static final String LOCK_PRODUCT_UPDATE_PREFIX = "lock:product:update:";
-
+    public static Map<String, Product> productCache = new ConcurrentHashMap<>();
 
     @Autowired
     private ProductMapper productMapper;
@@ -265,6 +267,61 @@ public class ProductService {
         }
     }
 
+
+    /**-------------------------------------------------------------------------------
+     *    简单版redis+db + 冷热分离 + 缓存击穿（失效）+ 缓存穿透
+     *    + 热点数据重建 + 锁优化 + 读写锁 + JVM级别缓存
+     *-------------------------------------------------------------------------------*/
+    public Product getProductV8(Integer id){
+        String productKey = RedisKeyPrefixConst.PRODUCT_CACHE+id;
+        String lockProductKey = LOCK_PRODUCT_HOT_CACHE_PREFIX + id;
+        String updateProductKey = LOCK_PRODUCT_UPDATE_PREFIX + id;
+        Product product = null;
+
+        product = getFromJVMCache(productKey);
+        if (product != null){
+            logger.info("从JVM缓存中获取");
+            return product;
+        }
+
+        product = getFromRedisCache(productKey);
+        if(product != null){
+            return product;
+        }
+
+        // 热点数据重建,可能有多个线程去重建，但是只需要一个线程建立就好
+        RLock hotCacheLock = redisson.getLock(lockProductKey);
+        // lock.lock();
+        try{
+            hotCacheLock.tryLock(1,TimeUnit.SECONDS);
+            logger.info("热点数据重建，双重检查");
+            product = getFromRedisCache(productKey);
+            if(product != null){
+                return product;
+            }
+            // 获取读锁
+            RReadWriteLock readWriteLock = redisson.getReadWriteLock(updateProductKey);
+            RLock rLock = readWriteLock.readLock();
+            try {
+                logger.info("获取到读锁执行");
+                return getFromDB(id);
+            }finally {
+                logger.info("释放读锁");
+                rLock.unlock();
+            }
+        } catch (InterruptedException e) {
+            logger.info("获取锁超时，直接从db获取");
+            return getFromDB(id);
+        } finally {
+            logger.info("释放锁");
+            hotCacheLock.unlock();
+        }
+    }
+
+    public Product getFromJVMCache(String productKey){
+        return productCache.get(productKey);
+    }
+
     public Product getFromRedisCache(String productKey){
         Product product = null;
         // 从redis中获取
@@ -295,6 +352,8 @@ public class ProductService {
             logger.info("处理缓存穿透");
             redisUtil.set(productKey,EMPTY_CACHE,genEmptyCacheTimeout(),TimeUnit.SECONDS);
         }else{
+            // 加入JVM缓存
+            productCache.putIfAbsent(productKey,product);
             // 加入缓存 并且设置随机的过期时间
             redisUtil.set(productKey,JSON.toJSONString(product),genProductCahceTimeout(), TimeUnit.SECONDS);
         }
