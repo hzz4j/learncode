@@ -24,9 +24,9 @@ public class ProductController {
         return "update success";
     }
 
-    @GetMapping("/get")
-    public Product get(Integer id){
-        Product product = productService.getProduct(id);
+    @GetMapping("/v1/get")
+    public Product getV1(Integer id){
+        Product product = productService.getProductV1(id);
         return product;
     }
 }

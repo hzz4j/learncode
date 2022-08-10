@@ -10,8 +10,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.TimeUnit;
+
 @Service
 public class ProductService {
+    // 缓存的操作时间
+    public static final Integer PRODUCT_CACHE_TIMEOUT = 60 * 60 * 24;
     private Logger logger = LoggerFactory.getLogger(ProductService.class);
 
     @Autowired
@@ -28,9 +32,13 @@ public class ProductService {
         productMapper.updateProduct(product);
     }
 
-    public Product getProduct(Integer id){
+    /**-------------------------------------------------------------------------------
+     *    简单版redis+db
+     *-------------------------------------------------------------------------------*/
+    public Product getProductV1(Integer id){
         String productKey = RedisKeyPrefixConst.PRODUCT_CACHE+id;
         Product product = null;
+        // 从redis中获取
         product = JSON.parseObject(redisUtil.get(productKey), Product.class);
         if(product!=null){
             logger.info("从缓存中获取");
@@ -39,8 +47,8 @@ public class ProductService {
         logger.info("从DB获取");
         product = productMapper.selectById(id);
 
-        // 加入缓存
-        redisUtil.set(productKey,JSON.toJSONString(product));
+        // 加入缓存 并且有过期时间
+        redisUtil.set(productKey,JSON.toJSONString(product),PRODUCT_CACHE_TIMEOUT, TimeUnit.SECONDS);
         return product;
     }
 }
