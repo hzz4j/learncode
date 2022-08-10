@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.hzz.mapper.ProductMapper">
+    <resultMap id="BASE_MAP" type="org.hzz.entity.Product">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="price" column="price"></result>
+    </resultMap>
+    <select id="selectById" resultMap="BASE_MAP">
+        SELECT * FROM product WHERE id = #{product.id}
+    </select>
+
+    <update id="updateProduct">
+        UPDATE product  set name = #{product.name},price = #{product.price}
+        WHERE id = #{product.id}
+    </update>
+
+    <insert id="createProduct">
+        INSERT INTO product(name,price)
+        VALUES(#{product.name},#{product.price})
+    </insert>
+</mapper>
