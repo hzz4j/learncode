@@ -76,8 +76,31 @@ public class ProductService {
         return product;
     }
 
+
+    /**-------------------------------------------------------------------------------
+     *    简单版redis+db + 冷热分离 + 缓存击穿（失效）
+     *-------------------------------------------------------------------------------*/
+    public Product getProductV3(Integer id){
+        String productKey = RedisKeyPrefixConst.PRODUCT_CACHE+id;
+        Product product = null;
+        // 从redis中获取
+        product = JSON.parseObject(redisUtil.get(productKey), Product.class);
+        if(product!=null){
+            // 冷热分离，延长过期时间
+            redisUtil.expire(productKey,genProductCahceTimeout(),TimeUnit.SECONDS);
+            logger.info("从缓存中获取，并延长过期时间");
+            return product;
+        }
+        logger.info("从DB获取");
+        product = productMapper.selectById(id);
+
+        // 加入缓存 并且设置随机的过期时间
+        redisUtil.set(productKey,JSON.toJSONString(product),genProductCahceTimeout(), TimeUnit.SECONDS);
+        return product;
+    }
+
     public int genProductCahceTimeout(){
-        // 延长0-4小时
+        // 在24小时基础上，延长0-4小时
         return PRODUCT_CACHE_TIMEOUT + new Random().nextInt(5)*60*60;
     }
 }
