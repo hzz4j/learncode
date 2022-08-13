@@ -11,7 +11,6 @@ import java.util.concurrent.TimeoutException;
 public class Producer {
     public static void main(String[] args) throws IOException, TimeoutException {
 
-
         //获取TCP长连接
         Connection conn = RabbitUtils.getConnection();
         //创建通信“通道”，相当于TCP中的虚拟连接
@@ -35,6 +34,5 @@ public class Producer {
         channel.close();
         conn.close();
         System.out.println("===发送成功===");
-
     }
 }
