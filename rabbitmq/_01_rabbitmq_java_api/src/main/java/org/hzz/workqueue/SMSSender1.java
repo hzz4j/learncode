@@ -36,3 +36,13 @@ public class SMSSender1 {
         });
     }
 }
+/**
+ * 0 [main] INFO org.hzz.util.RabbitUtils  - 成功连接到： /192.168.187.135:5672
+ * SMSSender1-短信发送成功:SMS{name='乘客1', mobile='139000001', content='您的车票已预订成功'}
+ * SMSSender1-短信发送成功:SMS{name='乘客4', mobile='139000004', content='您的车票已预订成功'}
+ * SMSSender1-短信发送成功:SMS{name='乘客5', mobile='139000005', content='您的车票已预订成功'}
+ * SMSSender1-短信发送成功:SMS{name='乘客6', mobile='139000006', content='您的车票已预订成功'}
+ * SMSSender1-短信发送成功:SMS{name='乘客7', mobile='139000007', content='您的车票已预订成功'}
+ * SMSSender1-短信发送成功:SMS{name='乘客8', mobile='139000008', content='您的车票已预订成功'}
+ * SMSSender1-短信发送成功:SMS{name='乘客9', mobile='139000009', content='您的车票已预订成功'}
+ */

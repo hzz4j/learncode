@@ -35,3 +35,7 @@ public class SMSSender3 {
         });
     }
 }
+/**
+ * 0 [main] INFO org.hzz.util.RabbitUtils  - 成功连接到： /192.168.187.135:5672
+ * SMSSender3-短信发送成功:SMS{name='乘客3', mobile='139000003', content='您的车票已预订成功'}
+ */
