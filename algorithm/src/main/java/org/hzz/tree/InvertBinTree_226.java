@@ -1,5 +1,9 @@
 package org.hzz.tree;
 
+/**
+ * 翻转二叉树
+ * https://leetcode.cn/problems/invert-binary-tree/
+ */
 public class InvertBinTree_226 {
     public TreeNode invertTree(TreeNode root) {
         return inverseTree(root);
