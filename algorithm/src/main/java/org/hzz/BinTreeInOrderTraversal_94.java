@@ -1,7 +1,6 @@
 package org.hzz;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * 94. 二叉树的中序遍历
@@ -23,5 +22,22 @@ public class BinTreeInOrderTraversal_94 {
 
     private void accessData(TreeNode root,List<Integer> res){
         res.add(root.val);
+    }
+
+
+    public List<Integer> inorderTraversalWithLoop(TreeNode root){
+        List<Integer> res = new ArrayList<>();
+        // 用双端队列实现stack
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        while(root != null || !stack.isEmpty()){
+            while(root != null){
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            res.add(root.val);
+            root = root.right;
+        }
+        return res;
     }
 }
