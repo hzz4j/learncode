@@ -1,5 +1,8 @@
 package org.hzz.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 对称二叉树
  * https://leetcode.cn/problems/symmetric-tree/
@@ -31,5 +34,35 @@ public class SymmetricTree_101 {
         //再递归的比较 左节点的左孩子 和 右节点的右孩子
         //以及比较  左节点的右孩子 和 右节点的左孩子
         return deepCheck(left.left,right.right) && deepCheck(left.right,right.left);
+    }
+
+
+    public boolean isSymmetricWithQueue(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode u,v;
+        if(root == null || (root.left == null && root.right==null)) return true;
+
+        queue.offer(root.left);
+        queue.offer(root.right);
+
+        while (!queue.isEmpty()){
+            u = queue.poll();
+            v = queue.poll();
+
+            if(u == null && v == null){
+                continue;
+            }
+
+            if((u == null || v == null) ||
+                    (u.val != v.val)){
+                return false;
+            }
+            queue.offer(u.left);
+            queue.offer(v.right);
+
+            queue.offer(u.right);
+            queue.offer(v.left);
+        }
+        return true;
     }
 }
