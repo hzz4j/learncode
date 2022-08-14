@@ -1,4 +1,4 @@
-package org.hzz;
+package org.hzz.tree;
 
 /**
  * 树结点的定义
