@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 
 public class TopKFrequent_347 {
-    static class Element{
+     class Element{
         private int val;
         private int frequent;
         public Element(int val,int frequent){
@@ -22,7 +22,7 @@ public class TopKFrequent_347 {
                     '}';
         }
     }
-    public int[] topKFrequentWithPQ(int[] nums, int k) {
+    public int[] topKFrequent(int[] nums, int k) {
         // count frequent
         Map<Integer,Integer> map = new HashMap<>();
         for (int num:
@@ -52,7 +52,7 @@ public class TopKFrequent_347 {
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(
-                new TopKFrequent_347().topKFrequentWithPQ(new int[]{1, 1, 1, 2, 2, 3}, 2)
+                new TopKFrequent_347().topKFrequent(new int[]{1, 1, 1, 2, 2, 3}, 2)
         ));
     }
 }
