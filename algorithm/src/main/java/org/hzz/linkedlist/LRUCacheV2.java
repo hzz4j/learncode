@@ -20,7 +20,8 @@ public class LRUCacheV2 {
     }
 
     public int get(int key) {
-        return cache.get(key);
+        Integer res = cache.get(key);
+        return res == null ? -1:res;
     }
 
     public void put(int key, int value) {
