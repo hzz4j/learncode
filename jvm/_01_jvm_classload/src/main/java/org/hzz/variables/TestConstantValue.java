@@ -6,6 +6,7 @@ public class TestConstantValue {
         System.out.println(V.B); // 访问类中ConstantValue（字面常量并不会触发初始化）
         System.out.println("------------------------");
         //System.out.println(V.C);
+        System.out.println(V.B == "hello World");
     }
 
 }
@@ -14,6 +15,7 @@ public class TestConstantValue {
  * 1
  * hello World
  * ------------------------
+ * true
  */
 class V{
     public final static int A = 1;
