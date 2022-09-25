@@ -26,7 +26,6 @@ public class SellTicketDemo implements Runnable {
         thread2.setPriority(Thread.MAX_PRIORITY);
         thread3.setPriority(Thread.MIN_PRIORITY);
         thread4.setPriority(Thread.MAX_PRIORITY);
-
         startThread(thread1, thread2, thread3, thread4);
     }
 
