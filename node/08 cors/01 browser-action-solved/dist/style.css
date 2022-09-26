@@ -1,0 +1,22 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3e4c5a;
+    color: #fff;
+}
+
+#name{
+    font-size: 1.2rem;
+}
+
+.errors{
+    color: red;
+}
+
+.success{
+    color: greenyellow;
+}
+
