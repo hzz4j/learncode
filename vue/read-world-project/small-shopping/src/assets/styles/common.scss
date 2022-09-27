@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+ul {
+    list-style: none;
+}
+
+
+// 容器的宽度
+.container{
+    width: 1240px;
+    margin: 0 auto;
+    position: relative;
+}
