@@ -2,12 +2,20 @@
   <!-- 导航栏 -->
   <nav class="menus-wrapper">
     <ul class="container">
-      <li class="menu-item"><a href="javascript:void(0)">测试用户</a></li>
+      <li class="menu-item">
+        <a href="javascript:void(0)"
+          ><i class="far fa-user icon"></i>Q10Viking</a
+        >
+      </li>
       <li class="menu-item"><a href="javascript:void(0)">退出登录</a></li>
       <li class="menu-item"><a href="javascript:void(0)">会员中心</a></li>
       <li class="menu-item"><a href="javascript:void(0)">帮助中心</a></li>
       <li class="menu-item"><a href="javascript:void(0)">关于我们</a></li>
-      <li class="menu-item"><a href="javascript:void(0)">手机版</a></li>
+      <li class="menu-item">
+        <a href="javascript:void(0)">
+          <font-awesome-icon icon="fas fa-mobile-alt" class="icon" />手机版</a
+        >
+      </li>
     </ul>
   </nav>
 </template>
@@ -21,15 +29,17 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
     .menu-item {
       padding: 0 1rem;
       font-size: 1.6rem;
       text-align: center;
       a {
         color: $gray-color;
-        @include colorText($theme-primary-color);
-
+        // @include colorText($theme-primary-color);
+        .icon {
+          font-size: 1.5rem;
+          margin-right: 0.5rem;
+        }
         &:hover {
           color: $theme-primary-color;
         }

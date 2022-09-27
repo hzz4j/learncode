@@ -7,6 +7,7 @@
 
 html{
     font-size: 62.5%;
+    min-width: $container-size;
 }
 
 ul {
@@ -16,7 +17,7 @@ ul {
 
 // 容器的宽度
 .container{
-    width: 1240px;
+    width: $container-size;
     margin: 0 auto;
     position: relative;
 }
