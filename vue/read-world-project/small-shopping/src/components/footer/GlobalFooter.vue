@@ -65,9 +65,9 @@
 .section-1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  padding: 5rem 0;
   dl {
-    font-size: 1.6rem;
-    color: #999;
+    color: $gray-light-color;
 
     & ~ dl {
       border-left: 1px solid #ededed;
@@ -84,8 +84,8 @@
     }
 
     dd {
-      width: 9.2rem;
-      height: 9.2rem;
+      width: $dd-size;
+      height: $dd-size;
       margin: 3.2rem 1.2rem 0 0;
       border: 1px solid #ededed;
 
@@ -100,7 +100,7 @@
         border: none;
         .desc-wrapper {
           .description {
-            margin-top: 8px;
+            margin-top: 0.8rem;
             display: block;
           }
         }
@@ -123,21 +123,21 @@
 
       &.hotline {
         justify-content: flex-end;
-        width: calc(92 * 2px);
+        width: calc(#{$dd-size} * 2);
         border: none;
         font-size: 2rem;
-        color: #666;
+        color: $gray-deep-color;
 
         small {
           margin: 0.5rem 0 1rem 0;
-          color: #999;
-          font-size: 1.3rem;
+          color: $gray-light-color;
+          font-size: $text-size;
         }
       }
 
       i {
         font-size: 3.6rem;
-        color: #666;
+        color: $gray-deep-color;
 
         &:hover {
           color: $theme-primary-color;
@@ -151,7 +151,7 @@
       }
 
       .description {
-        font-size: 1.3rem;
+        font-size: $text-size;
       }
     }
   }
