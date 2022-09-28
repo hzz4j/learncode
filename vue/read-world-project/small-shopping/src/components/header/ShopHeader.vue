@@ -62,10 +62,9 @@ function updateActive(val: number) {
   justify-content: space-between;
   align-items: center;
   .logo {
-    width: 30rem;
+    width: 20rem;
     height: 132px;
-    object-fit: cover;
-    transform: scale(0.6);
+    object-fit: contain;
   }
 
   .titles {
