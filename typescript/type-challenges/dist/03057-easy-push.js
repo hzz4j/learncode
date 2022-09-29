@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// 使用
+// ============= Use Age ====================
 const a = ["1", 2, "3", true];
-console.log(a);
+// ============= output ====================
+console.log(a); // [ '1', 2, '3', true ]

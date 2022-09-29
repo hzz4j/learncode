@@ -10,6 +10,8 @@ type cases = [
 // ============= Your Code Here =============
 type Push<T extends unknown[], U> = [...T, U];
 
-// ============= Use Age =============
+// ============= Use Age ====================
 const a: Push<["1", 2, "3"], boolean> = ["1", 2, "3", true];
-console.log(a);
+
+// ============= output ====================
+console.log(a); // [ '1', 2, '3', true ]
