@@ -1,6 +1,7 @@
 <template>
   <GlobalNavHeader></GlobalNavHeader>
   <ShopHeader></ShopHeader>
+  <main style="height: 20rem"></main>
   <GlobalFooter></GlobalFooter>
 </template>
 

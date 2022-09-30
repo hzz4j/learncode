@@ -1,27 +1,8 @@
 <template>
   <div class="container">
     <img :src="logo" alt="" class="logo" />
-    <ul class="titles">
-      <!-- <li class="title" :class="{ active: active === 1 }">首页</li>
-      <li class="title">美食</li>
-      <li class="title">服饰</li>
-      <li class="title">母婴</li>
-      <li class="title">个护</li>
-      <li class="title">严选</li>
-      <li class="title">数码</li>
-      <li class="title">运动</li>
-      <li class="title">杂质</li> -->
-
-      <li
-        v-for="(title, index) in titles"
-        class="title"
-        :key="index"
-        :class="{ active: active === index }"
-        @click="updateActive(index)"
-      >
-        {{ title }}
-      </li>
-    </ul>
+    <!-- titles -->
+    <ShopHeaderNav></ShopHeaderNav>
     <div class="right-wrapper">
       <div class="search">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -36,24 +17,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue"
 import logo from "@/assets/images/logo.png"
-const titles = [
-  "首页",
-  "美食",
-  "服饰",
-  "母婴",
-  "个护",
-  "严选",
-  "数码",
-  "运动",
-  "杂质",
-]
-const active = ref(-1)
-
-function updateActive(val: number) {
-  active.value = val
-}
+import ShopHeaderNav from "./ShopHeaderNav.vue"
 </script>
 
 <style lang="scss" scoped>
@@ -65,24 +30,6 @@ function updateActive(val: number) {
     width: 20rem;
     height: 132px;
     object-fit: contain;
-  }
-
-  .titles {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    font-size: 1.6rem;
-    .title {
-      display: flex;
-      align-items: center;
-      height: 3.2rem;
-
-      &:hover,
-      &.active {
-        color: $theme-primary-color;
-        border-bottom: 1px solid $theme-primary-color;
-      }
-    }
   }
 
   .right-wrapper {

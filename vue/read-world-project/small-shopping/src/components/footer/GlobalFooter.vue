@@ -1,7 +1,7 @@
 <template>
-  <div class="footer container">
+  <div class="footer">
     <!-- section-1 start -->
-    <section class="section-1">
+    <section class="section-1 container">
       <dl>
         <dt>客服服务</dt>
         <div class="content-wrapper">
