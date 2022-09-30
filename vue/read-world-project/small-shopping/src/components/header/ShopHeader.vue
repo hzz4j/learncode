@@ -5,11 +5,11 @@
     <ShopHeaderNav></ShopHeaderNav>
     <div class="right-wrapper">
       <div class="search">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <i class="iconfont icon-sousuo search-icon"></i>
         <input type="text" placeholder="search" />
       </div>
       <div class="cart">
-        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="iconfont icon-cart"></i>
         <span class="number">0</span>
       </div>
     </div>
@@ -45,7 +45,7 @@ import ShopHeaderNav from "./ShopHeaderNav.vue"
         top: 1.6rem;
         transform: translateY(-50%);
         color: #000;
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
       input {
         width: 17rem;
@@ -63,7 +63,7 @@ import ShopHeaderNav from "./ShopHeaderNav.vue"
     .cart {
       position: relative;
       i {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
 
       .number {
