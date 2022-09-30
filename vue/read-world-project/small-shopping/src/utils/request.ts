@@ -1,7 +1,6 @@
 import axios, { type AxiosInstance, type AxiosResponse } from "axios"
 import type { AppResponseData } from "@/types/ResponseData"
 
-console.log("import.meta.env.VITE_BASE_URL", import.meta.env.VITE_BASE_URL)
 // config axios
 const apiClient: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL,
