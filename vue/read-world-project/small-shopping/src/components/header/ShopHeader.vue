@@ -26,6 +26,7 @@ import ShopHeaderNav from "./ShopHeaderNav.vue"
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   .logo {
     width: 20rem;
     height: 132px;

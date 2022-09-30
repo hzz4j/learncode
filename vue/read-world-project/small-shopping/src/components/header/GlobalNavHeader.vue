@@ -12,9 +12,7 @@
       <li class="menu-item"><a href="javascript:void(0)">帮助中心</a></li>
       <li class="menu-item"><a href="javascript:void(0)">关于我们</a></li>
       <li class="menu-item">
-        <a href="javascript:void(0)">
-          <font-awesome-icon icon="fas fa-mobile-alt" class="icon" />手机版</a
-        >
+        <a href="javascript:void(0)"> 手机版</a>
       </li>
     </ul>
   </nav>

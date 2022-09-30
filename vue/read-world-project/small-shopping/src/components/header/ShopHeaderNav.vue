@@ -52,7 +52,6 @@ function updateActive(val: number) {
 
     &:hover,
     &.active {
-      background-color: antiquewhite;
       color: $theme-primary-color;
       border-bottom: 1px solid $theme-primary-color;
     }
