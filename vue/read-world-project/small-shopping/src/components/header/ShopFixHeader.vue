@@ -17,8 +17,8 @@
 <script lang="ts" setup>
 import logo from "@/assets/images/logo.png"
 import ShopHeaderNav from "./ShopHeaderNav.vue"
-import { ref, computed } from "vue"
-import useWindowScroll from "@/composition/useWindowScroll"
+import { computed } from "vue"
+import useWindowScroll from "@/composables/useWindowScroll"
 
 const { y } = useWindowScroll()
 const fixNavBar = computed(() => y.value > 76)
@@ -61,6 +61,10 @@ const fixNavBar = computed(() => y.value > 76)
     width: 28.2rem;
     box-sizing: border-box;
     border-left: 2px solid $theme-primary-color;
+
+    li:hover {
+      color: $theme-primary-color;
+    }
   }
 }
 </style>
