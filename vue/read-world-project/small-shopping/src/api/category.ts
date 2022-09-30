@@ -13,7 +13,6 @@ export type CategoryHead = {
   children: Good[]
 }
 
-export async function getCategoryHead() {
-  const data = await request<CategoryHead[]>("/home/category/head", "get")
-  return data
+export function getCategoryHead() {
+  return request<CategoryHead[]>("/home/category/head", "get")
 }

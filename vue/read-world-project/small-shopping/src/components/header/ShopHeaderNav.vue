@@ -25,9 +25,10 @@ import { getCategoryHead, type CategoryHead } from "@/api/category"
 import DefaultCategoryHead from "@/api/defaultCategoryHead"
 
 const categoryHeads: Ref<CategoryHead[]> = ref(DefaultCategoryHead)
-onMounted(async () => {
-  const categoryHead = await getCategoryHead()
-  categoryHeads.value = categoryHead
+onMounted(() => {
+  getCategoryHead().then((categoryHead) => {
+    categoryHeads.value = categoryHead
+  })
 })
 
 const active = ref(-1)
