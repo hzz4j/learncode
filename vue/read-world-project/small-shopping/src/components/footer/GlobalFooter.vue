@@ -56,7 +56,35 @@
     <!-- section-1 end -->
 
     <!-- section-2 start -->
-    <section class="section-2"></section>
+    <section class="section-2">
+      <div class="line-1">
+        <div class="item">
+          <i class="iconfont icon-emptybox"></i>
+          <span class="name">价格亲民</span>
+        </div>
+        <div class="item">
+          <i class="iconfont icon-wuliu"></i>
+          <span class="name">物流快捷</span>
+        </div>
+        <div class="item">
+          <i class="iconfont icon-dianzan"></i>
+          <span class="name">品质新鲜</span>
+        </div>
+      </div>
+
+      <div class="line-2">
+        <ul class="sub-titles">
+          <li class="title">关于我们</li>
+          <li class="title">帮助中心</li>
+          <li class="title">售后服务</li>
+          <li class="title">配送与检验</li>
+          <li class="title">商务合作</li>
+          <li class="title">搜索推荐</li>
+          <li class="title">友情链接</li>
+        </ul>
+        <p class="copyright">CopyRight &copy;<span class="name">静默</span></p>
+      </div>
+    </section>
     <!-- section-2 end -->
   </div>
 </template>
@@ -152,6 +180,56 @@
 
       .description {
         font-size: $text-size;
+      }
+    }
+  }
+}
+
+.section-2 {
+  color: #fff;
+  background-color: #000;
+  .line-1 {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5rem 0;
+    border-bottom: 1px solid #434343;
+    .item {
+      display: flex;
+      align-items: center;
+      i {
+        margin-right: 1rem;
+        padding: 1rem;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        border-right-width: 0;
+        font-size: 4rem;
+      }
+      font-size: 2rem;
+    }
+  }
+
+  .line-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: $gray-light-color;
+    .sub-titles {
+      display: flex;
+      .title {
+        margin: 0.2rem 0 0.5rem 0;
+        padding: 0 1rem;
+
+        & ~ .title {
+          border-left: 1px solid #fff;
+        }
+      }
+    }
+    .copyright {
+      .name {
+        margin-left: 0.5rem;
+        color: $theme-primary-color;
       }
     }
   }
