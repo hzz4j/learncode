@@ -1,18 +1,10 @@
 import { request } from "@/utils/request"
+import type { CategoryHead } from "@/types/category/CategoryHead"
 
-type Good = {
-  id: string
-  name: string
-  picture: string
-}
-
-export type CategoryHead = {
-  id: string
-  name: string
-  picture: string
-  children: Good[]
-}
-
+/**
+ * 获取头部分类数据
+ * @returns CategoryHead
+ */
 export function getCategoryHead() {
   return request<CategoryHead[]>("/home/category/head", "get")
 }
