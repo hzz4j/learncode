@@ -1,20 +1,18 @@
 <template>
   <ul class="titles">
+    <li class="title">首页</li>
     <li
-      v-for="(title, index) in titles"
+      v-for="(categoryHead, index) in categoryHeads"
       class="title"
-      :key="index"
+      :key="categoryHead.id"
       :class="{ active: active === index }"
       @click="updateActive(index)"
     >
-      <span class="name">{{ title }}</span>
+      <span class="name">{{ categoryHead.name }}</span>
       <ul class="foods-wrapper container" :data-id="index">
-        <li class="food" v-for="i in 10" :key="i">
-          <img
-            src="http://zhoushugang.gitee.io/erabbit-client-pc-static/uploads/img/category%20(4).png"
-            alt=""
-          />
-          <p class="food-name">果干{{ index }}</p>
+        <li class="food" v-for="good in categoryHead.children" :key="good.id">
+          <img :src="good.picture" alt="" />
+          <p class="food-name">{{ good.name }}</p>
         </li>
       </ul>
     </li>
@@ -22,20 +20,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue"
-const titles = [
-  "首页",
-  "美食",
-  "服饰",
-  "母婴",
-  "个护",
-  "严选",
-  "数码",
-  "运动",
-  "杂质",
-]
-const active = ref(-1)
+import { ref, onMounted, type Ref } from "vue"
+import { getCategoryHead, type CategoryHead } from "@/api/category"
+import DefaultCategoryHead from "@/api/defaultCategoryHead"
 
+const categoryHeads: Ref<CategoryHead[]> = ref(DefaultCategoryHead)
+onMounted(async () => {
+  const categoryHead = await getCategoryHead()
+  categoryHeads.value = categoryHead
+})
+
+const active = ref(-1)
 function updateActive(val: number) {
   active.value = val
 }
@@ -76,7 +71,7 @@ function updateActive(val: number) {
       top: 5.6rem;
       left: -20rem;
       display: flex;
-      justify-content: space-evenly;
+      justify-content: flex-start;
       align-items: center;
       height: 0;
       opacity: 0;
@@ -84,6 +79,7 @@ function updateActive(val: number) {
       //   延迟消失，保证仍然hover
       transition: all 0.3s 0.1s;
       .food {
+        margin: 0 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -98,6 +94,12 @@ function updateActive(val: number) {
           margin-top: 1rem;
           font-size: 1rem;
           color: #000;
+        }
+
+        &:hover {
+          .food-name {
+            color: $theme-primary-color;
+          }
         }
       }
     }
