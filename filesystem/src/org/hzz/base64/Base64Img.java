@@ -1,4 +1,4 @@
-package org.hzz.org.hzz.base64;
+package org.hzz.base64;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
