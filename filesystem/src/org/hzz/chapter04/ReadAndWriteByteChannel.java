@@ -17,11 +17,13 @@ public class ReadAndWriteByteChannel {
             SeekableByteChannel outChannel = Files.newByteChannel(writePath, StandardOpenOption.CREATE,StandardOpenOption.WRITE)){
             final int BUFFER_CAPACITY = 10;
             ByteBuffer byteBuffer = ByteBuffer.allocate(BUFFER_CAPACITY);
-
+            // 1. write data into Buffer
             while(inChannel.read(byteBuffer) > 0){
-                // change to read model
+                // 2. Call flip
                 byteBuffer.flip();
+                // 3. Read data out of Buffer
                 outChannel.write(byteBuffer);
+                // 4. Call buffer.clear() or buffer.compact()
                 byteBuffer.clear();
             }
         }
