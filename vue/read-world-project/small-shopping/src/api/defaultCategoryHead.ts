@@ -1,4 +1,4 @@
-import type { CategoryHead } from "@/api/category"
+import type { CategoryHead } from "@/types/category/CategoryHead"
 
 const titles = [
   "居家",

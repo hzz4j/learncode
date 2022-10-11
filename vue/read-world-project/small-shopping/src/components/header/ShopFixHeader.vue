@@ -1,3 +1,7 @@
+<!-- 
+ 组件描述： 固定导航栏
+ -->
+
 <template>
   <!-- 父容器负责固定 -->
   <div class="header" :class="{ sticky: fixNavBar }">

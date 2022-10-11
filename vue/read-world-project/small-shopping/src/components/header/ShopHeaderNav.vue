@@ -2,7 +2,7 @@
   <ul class="titles">
     <li class="title">首页</li>
     <li
-      v-for="(categoryHead, index) in categoryHeads"
+      v-for="(categoryHead, index) in categoryStore.categoryHeads"
       class="title"
       :key="categoryHead.id"
       :class="{ active: active === index }"
@@ -20,16 +20,9 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, type Ref } from "vue"
-import { getCategoryHead, type CategoryHead } from "@/api/category"
-import DefaultCategoryHead from "@/api/defaultCategoryHead"
-
-const categoryHeads: Ref<CategoryHead[]> = ref(DefaultCategoryHead)
-onMounted(() => {
-  getCategoryHead().then((categoryHead) => {
-    categoryHeads.value = categoryHead
-  })
-})
+import { ref } from "vue"
+import { useCategoryStore } from "@/store/category"
+const categoryStore = useCategoryStore()
 
 const active = ref(-1)
 function updateActive(val: number) {

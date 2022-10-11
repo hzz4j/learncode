@@ -11,4 +11,9 @@ import GlobalNavHeader from "@/components/header/GlobalNavHeader.vue"
 import ShopHeader from "@/components/header/ShopHeader.vue"
 import ShopFixHeader from "./components/header/ShopFixHeader.vue"
 import GlobalFooter from "@/components/footer/GlobalFooter.vue"
+import { useCategoryStore } from "@/store/category"
+
+// 初始化category
+const categoryStore = useCategoryStore()
+categoryStore.initCategoryHead()
 </script>
