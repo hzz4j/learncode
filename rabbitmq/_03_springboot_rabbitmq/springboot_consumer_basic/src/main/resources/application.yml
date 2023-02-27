@@ -1,0 +1,7 @@
+spring:
+  rabbitmq:
+    host: 192.168.135.130 #主机ip
+    port: 5672 #端口
+    username: hzz
+    password: Root.123456
+    virtual-host: /springboot
