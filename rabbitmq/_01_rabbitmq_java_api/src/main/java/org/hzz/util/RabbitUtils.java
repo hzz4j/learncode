@@ -10,10 +10,10 @@ public class RabbitUtils {
     private static ConnectionFactory connectionFactory = new ConnectionFactory();
     static {
 //        connectionFactory.setHost("learning.rabbitmq.org");
-        connectionFactory.setHost("192.168.187.135");
+        connectionFactory.setHost("192.168.135.130");
         connectionFactory.setPort(5672);//5672是RabbitMQ的默认端口号
         connectionFactory.setUsername("hzz");
-        connectionFactory.setPassword("root.123456");
+        connectionFactory.setPassword("Root.123456");
         connectionFactory.setVirtualHost("/");
     }
     public static Connection getConnection(){
