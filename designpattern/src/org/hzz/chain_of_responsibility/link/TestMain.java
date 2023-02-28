@@ -28,3 +28,9 @@ public class TestMain {
         chain.start(request);
     }
 }
+/**
+ * 访问频率控制.
+ * 登录验证
+ * 访问权限
+ * PermitsHandler failed
+ */
