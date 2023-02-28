@@ -17,3 +17,9 @@ public class TestMain {
         subject.notifyAllObServer("A happed");
     }
 }
+/**
+ * Task1 receive A happed
+ * Task2 receive A happed
+ * --------------------------------------------
+ * Task1 receive A happed
+ */
