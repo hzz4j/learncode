@@ -10,3 +10,7 @@ public class FlyweightTest {
         System.out.println(TreeFactory.getSize());
     }
 }
+/**
+ * Create tree: xxx
+ * 1
+ */
