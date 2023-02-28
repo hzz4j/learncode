@@ -9,6 +9,7 @@ public class MainTest {
         System.out.println( "original: " + product );
         System.out.println( "clone:  " + clone );
         product.getBaseInfo().setCompanyName( "HZZ Come ON" );
+        product.setPart1("rename part1");
         System.out.println( "original: " + product );
         System.out.println( "clone:  " + clone );
     }
@@ -16,6 +17,6 @@ public class MainTest {
 /**
  * original: Product{part1='part1', part2='part2', part3='part3', part4='part4', baseInfo=BaseInfo{companyName='Q10Viking'}}
  * clone:  Product{part1='part1', part2='part2', part3='part3', part4='part4', baseInfo=BaseInfo{companyName='Q10Viking'}}
- * original: Product{part1='part1', part2='part2', part3='part3', part4='part4', baseInfo=BaseInfo{companyName='HZZ Come ON'}}
+ * original: Product{part1='rename part1', part2='part2', part3='part3', part4='part4', baseInfo=BaseInfo{companyName='HZZ Come ON'}}
  * clone:  Product{part1='part1', part2='part2', part3='part3', part4='part4', baseInfo=BaseInfo{companyName='Q10Viking'}}
  */
