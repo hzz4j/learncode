@@ -1,4 +1,4 @@
-package org.hzz.factory.simple.product;
+package org.hzz.factory.product;
 
 public class ProductA implements Product{
     @Override
