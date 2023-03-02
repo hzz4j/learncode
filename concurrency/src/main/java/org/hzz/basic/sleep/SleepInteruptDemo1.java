@@ -28,7 +28,7 @@ public class SleepInteruptDemo1 implements Runnable{
         System.out.println("线程停止：stop thread");
     }
 }
-/** 验证Thread.sleep期间会检测到中断并清除中断标志
+/** 验证Thread.sleep期间会检测到中断并清除中断标志，需要重新打上中断标志
  * count = 0
  * count = 1
  * count = 2
