@@ -19,6 +19,7 @@ public class ThreadInterruptDemo {
         });
 
         t1.start();
+        // 不会停止线程t1,只会设置一个中断标志位 flag=true
         t1.interrupt();
     }
 }
