@@ -1,9 +1,9 @@
 package org.hzz.basic.sleep;
 
-public class SleepInteruptDemo implements Runnable{
+public class SleepInteruptDemo1 implements Runnable{
 
     public static void main(String[] args) throws InterruptedException {
-        Thread thread = new Thread(new SleepInteruptDemo());
+        Thread thread = new Thread(new SleepInteruptDemo1());
         thread.start();
         Thread.sleep(5);
         thread.interrupt();
@@ -20,19 +20,19 @@ public class SleepInteruptDemo implements Runnable{
                 Thread.sleep(1);
             } catch (InterruptedException e) {
                 System.out.println("检测到中断异常");
+                // 由于sleep过程中出现了中断异常中断标志被清除了
+                // 所以需要重新打中断标志
+                Thread.currentThread().interrupt();
             }
         }
         System.out.println("线程停止：stop thread");
     }
 }
 /** 验证Thread.sleep期间会检测到中断并清除中断标志
- * ...
- * count = 4
+ * count = 0
+ * count = 1
+ * count = 2
+ * count = 3
  * 检测到中断异常
- * count = 5
- * ...
- * count = 997
- * count = 998
- * count = 999
  * 线程停止：stop thread
  */
