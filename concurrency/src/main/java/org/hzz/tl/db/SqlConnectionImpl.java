@@ -6,6 +6,11 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 public class SqlConnectionImpl implements Connection {
+
+    public static final Connection fetchConnection(){
+        return new SqlConnectionImpl();
+    }
+
     @Override
     public Statement createStatement() throws SQLException {
         return null;
