@@ -16,6 +16,7 @@ public class UseThreadLocal {
             }
             System.out.println(threadName+":"+threadLocal1.get());
             System.out.println(threadName+":"+threadLocal2.get());
+            threadLocal2.remove();
         }
     }
 
