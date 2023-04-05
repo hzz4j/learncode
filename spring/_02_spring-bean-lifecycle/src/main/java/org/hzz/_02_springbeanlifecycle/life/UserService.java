@@ -5,11 +5,19 @@ import jakarta.annotation.PreDestroy;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class UserService implements BeanNameAware, InitializingBean , DisposableBean {
+
+    @Autowired
+    @Qualifier("systemProperties")
+    private Map<String, Object> systemProperties;
 
     @Value("${my.msg}")
     private String msg;
@@ -46,5 +54,10 @@ public class UserService implements BeanNameAware, InitializingBean , Disposable
     @PreDestroy
     public void predestroy(){
         System.out.println("@PreDestory");
+    }
+
+
+    public Map<String,Object> getSystemProperties(){
+        return this.systemProperties;
     }
 }
