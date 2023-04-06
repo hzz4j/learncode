@@ -27,27 +27,41 @@ public class Plugin implements InvocationHandler{
 
     public static Object wrap(Object target, Interceptor interceptor) {
         Class<?> type = target.getClass();
-        Class<?>[] interfaces = getAllInterfaces(target);
         Map<Class<?>,Set<Method>> signatureMap = getSignatureMap(interceptor);
-        return Proxy.newProxyInstance(
-            type.getClassLoader(), 
-            interfaces, 
-            new Plugin(target, interceptor, signatureMap));
+        Class<?>[] interfaces = getAllInterfaces(type, signatureMap);
+
+        if(interfaces.length == 0){
+            return target;
+        }else{
+            return Proxy.newProxyInstance(
+                    type.getClassLoader(),
+                    interfaces,
+                    new Plugin(target, interceptor, signatureMap));
+        }
     }
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-    
-        return null;
+        try {
+            Set<Method> methods = signatureMap.get(method.getDeclaringClass());
+            if (methods != null && methods.contains(method)) {
+                return interceptor.intercept(new Invocation(target, method, args));
+            }
+            return method.invoke(target, args);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
-    public static Class<?>[] getAllInterfaces(Object target){
+    public static Class<?>[] getAllInterfaces(Class<?> target, Map<Class<?>,Set<Method>> signatureMap){
         Set<Class<?>> interfaces = new HashSet<Class<?>>();
         while(target != null){
-            for(Class<?> i : target.getClass().getInterfaces()){
-                interfaces.add(i);
+            for(Class<?> i : target.getInterfaces()){
+                if(signatureMap.containsKey(i)){
+                    interfaces.add(i);
+                }
             }
-            target = target.getClass().getSuperclass();
+            target = target.getSuperclass();
         }
         return interfaces.toArray(new Class<?>[interfaces.size()]);
     }
@@ -55,7 +69,9 @@ public class Plugin implements InvocationHandler{
 
     public static Map<Class<?>,Set<Method>> getSignatureMap(Interceptor interceptor){
         Intercepts interceptsAnnotation = interceptor.getClass().getAnnotation(Intercepts.class);
-        
+        if (interceptsAnnotation == null) {
+            throw new PluginException("No @Intercepts annotation was found in interceptor " + interceptor.getClass().getName());
+        }
         Signature[] sigs = interceptsAnnotation.value();
         Map<Class<?>,Set<Method>> signatureMap = new HashMap();
 
