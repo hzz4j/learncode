@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration
+org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration
+#org.springframework.boot.autoconfigure.jooq.JooqAutoConfiguration
+org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
