@@ -19,6 +19,7 @@ public class ReadFile {
 
         System.out.println("==================================");
 
+      
         results = loadFactoryNames(DependsOnDatabaseInitializationDetector.class,
                 ReadFile.class.getClassLoader());
         results.forEach(System.out::println);
