@@ -18,7 +18,7 @@ public class BasicReactor extends Reactor{
         serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.bind(new InetSocketAddress(port));
         serverSocketChannel.configureBlocking(false);
-        serverSocketChannel.register(selector,
+        serverSocketChannel.register(getSelector(),
                 SelectionKey.OP_ACCEPT,
                 getAcceptor());
         started = true;
@@ -46,7 +46,7 @@ public class BasicReactor extends Reactor{
         }
 
         Handler getHandler(SocketChannel socketChannel) throws IOException {
-            return new Handler(socketChannel);
+            return new Handler(BasicReactor.this,socketChannel);
         }
     }
 
@@ -56,21 +56,24 @@ public class BasicReactor extends Reactor{
         protected final static int MAXOUT = 65535;
         static final int READING = 0, SENDING = 1, PROCESSING = 2;
         protected final SocketChannel socketChannel;
-        protected final SelectionKey selectionKey;
+        protected  SelectionKey selectionKey;
         ByteBuffer input = ByteBuffer.allocate(MAXIN);
         ByteBuffer output = ByteBuffer.allocate(MAXOUT);
         volatile int state = READING;
-        public Handler(SocketChannel socketChannel) throws IOException{
+        Reactor reactor;
+        public Handler(Reactor reactor,SocketChannel socketChannel) throws IOException{
             this.socketChannel = socketChannel;
             this.socketChannel.configureBlocking(false);
-            selectionKey = this.socketChannel.register(selector, 0);
-            registerHandler();
+            this.reactor = reactor;
+            registerHandler(reactor);
         }
 
-        void registerHandler(){
+
+        void registerHandler(Reactor reactor) throws IOException {
+            selectionKey = this.socketChannel.register(reactor.getSelector(), 0);
             selectionKey.interestOps(SelectionKey.OP_READ);
             selectionKey.attach(this);
-            selector.wakeup();
+            reactor.getSelector().wakeup();
         }
 
         @Override

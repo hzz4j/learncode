@@ -6,9 +6,9 @@ import java.nio.channels.Selector;
 import java.util.Iterator;
 import java.util.logging.Logger;
 
-public abstract class Reactor implements Runnable{
+public class Reactor implements Runnable{
     protected static Logger logger = Logger.getLogger(Reactor.class.getName());
-    protected Selector selector;
+    private Selector selector;
 
     public Reactor() throws IOException {
         this.selector = Selector.open();
@@ -39,5 +39,9 @@ public abstract class Reactor implements Runnable{
     protected void dispatch(SelectionKey key){
         Runnable task = (Runnable) key.attachment();
         if(task != null) task.run();
+    }
+
+    protected Selector getSelector(){
+        return selector;
     }
 }
