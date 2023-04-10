@@ -54,12 +54,12 @@ public class BasicReactor extends Reactor{
     class Handler implements Runnable{
         protected final static int MAXIN = 65535;
         protected final static int MAXOUT = 65535;
-        static final int READING = 0, SENDING = 1;
+        static final int READING = 0, SENDING = 1, PROCESSING = 2;
         protected final SocketChannel socketChannel;
         protected final SelectionKey selectionKey;
         ByteBuffer input = ByteBuffer.allocate(MAXIN);
         ByteBuffer output = ByteBuffer.allocate(MAXOUT);
-        int state = READING;
+        volatile int state = READING;
         public Handler(SocketChannel socketChannel) throws IOException{
             this.socketChannel = socketChannel;
             this.socketChannel.configureBlocking(false);
@@ -85,10 +85,15 @@ public class BasicReactor extends Reactor{
             // ... read data ...
             socketChannel.read(input);
             if(isInputComplete()){
-                process();
-                state = SENDING;
-                selectionKey.interestOps(SelectionKey.OP_WRITE);
+                onInputComplete();
             }
+        }
+
+        void onInputComplete() throws IOException {
+            // ... do something ...
+            process();
+            setState(SENDING);
+            selectionKey.interestOps(SelectionKey.OP_WRITE);
         }
 
         void send() throws IOException{
@@ -96,7 +101,7 @@ public class BasicReactor extends Reactor{
             output.put("hello client".getBytes(StandardCharsets.UTF_8));
             output.flip();
             socketChannel.write(output);
-            state = READING;
+            setState(READING);
             selectionKey.interestOps(SelectionKey.OP_READ);
             if(isOutputComplete()){
                 logger.info(Thread.currentThread().getName()+"关闭"+socketChannel.getRemoteAddress());
@@ -113,7 +118,8 @@ public class BasicReactor extends Reactor{
             return true;
         }
 
-        void process() throws IOException {
+
+        void process() {
             // ... process data ...
             if(input.position() > 0){
                 input.flip();
@@ -122,6 +128,10 @@ public class BasicReactor extends Reactor{
                 logger.info(Thread.currentThread().getName()+": read data is "+new String(bytes, StandardCharsets.UTF_8));
                 input.clear();
             }
+        }
+
+        void setState(int state){
+            this.state = state;
         }
     }
 }
