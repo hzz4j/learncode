@@ -32,7 +32,7 @@ public class EchoServer {
     }
 
     private void start() throws InterruptedException {
-        EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
+        EventLoopGroup eventLoopGroup = new NioEventLoopGroup(2);
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         ServerBootstrap serverBootstrap = new ServerBootstrap();
 //        EchoServerHandler echoServerHandler = new EchoServerHandler();
@@ -47,13 +47,16 @@ public class EchoServer {
                             ch.pipeline().addLast(new EchoServerHandler());
                         }
                     });
+            /**绑定多个端口，同步等待成功*/
             ChannelFuture channelFuture1 = serverBootstrap.bind(new InetSocketAddress(10000)).sync();
-            ChannelFuture channelFuture2 = serverBootstrap.bind(new InetSocketAddress(10001)).sync();
-            ChannelFuture channelFuture3 = serverBootstrap.bind(new InetSocketAddress(10002)).sync();
+//            ChannelFuture channelFuture2 = serverBootstrap.bind(new InetSocketAddress(10001)).sync();
+//            ChannelFuture channelFuture3 = serverBootstrap.bind(new InetSocketAddress(10002)).sync();
             LOG.info(channelFuture1.channel().localAddress().toString());
-            channelFuture2.channel().closeFuture().sync();
-            channelFuture3.channel().closeFuture().sync();
+            /*阻塞当前线程，直到服务器的ServerChannel被关闭*/
+//            channelFuture2.channel().closeFuture().sync();
+//            channelFuture3.channel().closeFuture().sync();
             channelFuture1.channel().closeFuture().sync();
+            LOG.info("服务器关闭");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {

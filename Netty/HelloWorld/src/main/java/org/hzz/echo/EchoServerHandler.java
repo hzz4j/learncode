@@ -12,6 +12,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     private static final Logger LOG = LoggerFactory.getLogger(EchoServerHandler.class);
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        LOG.info("channelRead: "+Thread.currentThread().getName());
         ByteBuf buf = (ByteBuf)msg;
         ctx.writeAndFlush(buf);
         ctx.close();
@@ -32,6 +33,7 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         LOG.info("连接： "+ctx.channel().remoteAddress().toString());
+        LOG.info("channelActive: "+Thread.currentThread().getName());
         super.channelActive(ctx);
     }
 }

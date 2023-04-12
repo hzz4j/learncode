@@ -7,6 +7,8 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.util.concurrent.Future;
+import io.netty.util.concurrent.GenericFutureListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,7 +25,7 @@ public class EchoClient {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new EchoClient(9998,"127.0.0.1").start();
+        new EchoClient(10000,"127.0.0.1").start();
     }
 
     private void start() throws InterruptedException {
@@ -40,8 +42,18 @@ public class EchoClient {
                             ch.pipeline().addLast(handler);
                         }
                     });
-            ChannelFuture f = bootstrap.connect().sync();
+
+            ChannelFuture connect = bootstrap.connect();
+            connect.addListener(new GenericFutureListener<Future<? super Void>>() {
+                @Override
+                public void operationComplete(Future<? super Void> future) throws Exception {
+                    System.out.println("Hello World");
+                }
+            });
+
+            ChannelFuture f = connect.sync();
             f.channel().closeFuture().sync();
+            LOG.info("客户端关闭");
         }finally {
             eventLoopGroup.shutdownGracefully().sync();
         }
