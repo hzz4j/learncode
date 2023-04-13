@@ -42,7 +42,7 @@ public class EchoClient {
                             ch.pipeline().addLast(handler);
                         }
                     });
-
+            /**--------------- 源码研究的部分---------------------------*/
             ChannelFuture connect = bootstrap.connect();
             connect.addListener(new GenericFutureListener<Future<? super Void>>() {
                 @Override
@@ -50,14 +50,12 @@ public class EchoClient {
                     System.out.println("Hello World");
                 }
             });
-
             ChannelFuture f = connect.sync();
-            f.channel().closeFuture().sync();
+            /**--------------- 源码研究的部分---------------------------*/
+            f.channel().closeFuture(); //.sync();
             LOG.info("客户端关闭");
         }finally {
             eventLoopGroup.shutdownGracefully().sync();
         }
-
-
     }
 }
