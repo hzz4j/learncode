@@ -18,6 +18,7 @@ public class DefaultEventExecutorChooserFactory implements EventExecutorChooserF
     }
 
     private class GenericEventExecutorChooser implements EventExecutorChooser {
+        
         private final AtomicInteger idx = new AtomicInteger();
         private EventLoop[] executors;
         GenericEventExecutorChooser(EventLoop[] executors) {
