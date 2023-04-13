@@ -11,19 +11,46 @@ import java.util.Scanner;
 public class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);
     public static void main(String[] args) {
-        NioEventLoopGroup nioEventLoopGroup = new NioEventLoopGroup(2);
+        // 增大线程
+        NioEventLoopGroup nioEventLoopGroup = new NioEventLoopGroup(5);
+
+        for (int i = 0; i < 10; i++) {
+            String msg = "msg" + i;
+            nioEventLoopGroup.submit(makeTask(msg));
+        }
+        // 增加线程
         Scanner scanner = new Scanner(System.in);
-        while(true){
-            String msg = scanner.nextLine();
+        System.out.println("请输入要增加的线程数");
+        String number = scanner.nextLine();
+        int n = Integer.parseInt(number);
+        nioEventLoopGroup.addNThreads(n);
+        System.out.println("请输入任意字符继续");
+        String next = scanner.next();
+        for (int i = 0; i < 100; i++) {
+            String msg = "msg" + i;
             nioEventLoopGroup.submit(makeTask(msg));
         }
     }
 
     public static Runnable makeTask(String msg){
-        return () -> {
-            log.info("msg:{}",msg);
-            // 验证ThreadExecutorMap的正确性
-            log.info(String.valueOf((NioEventLoop) ThreadExecutorMap.currentEventExecutor()));
-        };
+        return new Task(msg);
+    }
+
+    static class Task implements Runnable{
+        private String msg;
+        public Task(String msg){
+            this.msg = msg;
+        }
+        @Override
+        public void run() {
+            log.info("{},msg:{}",ThreadExecutorMap.currentEventExecutor(),msg);
+        }
+
+        @Override
+        public String toString() {
+            return "Task{" +
+                    "msg='" + msg + '\'' +
+                    '}';
+        }
     }
 }

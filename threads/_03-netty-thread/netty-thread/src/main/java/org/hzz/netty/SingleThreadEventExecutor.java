@@ -37,7 +37,7 @@ public abstract class SingleThreadEventExecutor  extends AbstractEventExecutor i
 
     protected void addTask(Runnable task){
         if(!offerTask(task)){
-            System.out.println("任务队列繁忙，拒绝接收任务");
+            System.out.println("任务队列繁忙，拒绝接收任务："+task);
         }
     }
 
@@ -81,6 +81,7 @@ public abstract class SingleThreadEventExecutor  extends AbstractEventExecutor i
                 boolean success = false;
                 try {
                     doStartThread();
+                    success = true;
                 }finally {
                     if(!success){
                         STATE_UPDATER.compareAndSet(this,ST_STARTED,ST_NOT_STARTED);

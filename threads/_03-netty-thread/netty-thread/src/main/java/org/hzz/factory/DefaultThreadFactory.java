@@ -1,11 +1,14 @@
 package org.hzz.factory;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 线程工厂
  */
+@Slf4j
 public class DefaultThreadFactory implements ThreadFactory {
     private static final AtomicInteger poolId = new AtomicInteger();
     private final AtomicInteger threadId = new AtomicInteger(0);
