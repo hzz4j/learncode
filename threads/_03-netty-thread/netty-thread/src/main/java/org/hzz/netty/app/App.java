@@ -12,12 +12,13 @@ public class App {
     private static final Logger log = LoggerFactory.getLogger(App.class);
     public static void main(String[] args) {
         // 增大线程
-        NioEventLoopGroup nioEventLoopGroup = new NioEventLoopGroup(5);
+        NioEventLoopGroup nioEventLoopGroup = new NioEventLoopGroup(2);
 
         for (int i = 0; i < 10; i++) {
             String msg = "msg" + i;
             nioEventLoopGroup.submit(makeTask(msg));
         }
+
         // 增加线程
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入要增加的线程数");
@@ -43,6 +44,7 @@ public class App {
         }
         @Override
         public void run() {
+            // 通过ThreadExecutorMap获取当前线程的EventExecutor
             log.info("{},msg:{}",ThreadExecutorMap.currentEventExecutor(),msg);
         }
 
