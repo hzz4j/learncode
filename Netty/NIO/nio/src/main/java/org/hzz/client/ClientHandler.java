@@ -55,6 +55,12 @@ public class ClientHandler implements Runnable{
     }
 
     private void handleInput(SelectionKey key) throws IOException {
+
+        int i = key.readyOps();
+        if(i == 0){
+            logger.info("key.readyOps() 0");
+        }
+
         if (key.isValid()){
             SocketChannel sc = (SocketChannel) key.channel();
             if (key.isConnectable()){
@@ -76,6 +82,7 @@ public class ClientHandler implements Runnable{
                     String body = new String(bytes, "UTF-8");
                     logger.info("客户端收到消息：" + body);
                 } else if (readBytes < 0) {
+                    logger.info("客户端关闭");
                     key.cancel();
                     sc.close();
                 } else {
@@ -117,6 +124,7 @@ public class ClientHandler implements Runnable{
             return true;
         } catch (IOException e) {
             logger.info("客户端发送消息失败：" + msg);
+            e.printStackTrace();
             return false;
         }
     }

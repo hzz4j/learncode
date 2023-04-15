@@ -52,7 +52,7 @@ public class EchoClient {
             });
             ChannelFuture f = connect.sync();
             /**--------------- 源码研究的部分---------------------------*/
-            f.channel().closeFuture(); //.sync();
+            f.channel().closeFuture().sync();
             LOG.info("客户端关闭");
         }finally {
             eventLoopGroup.shutdownGracefully().sync();

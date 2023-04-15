@@ -103,6 +103,9 @@ public class ServerHandler implements Runnable {
                     String response = "Hello," + msg + ",Now is " + LocalDateTime.now();
                     doWrite(sc, response);
                 }
+                // 关闭链路
+                key.cancel();
+                sc.close();
             }
         }
     }
