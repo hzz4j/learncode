@@ -18,5 +18,6 @@ public class TestShutdownDemo {
         });
         promise.sync();
         log.info("主线程退出");
+        while(true);
     }
 }
