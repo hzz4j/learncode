@@ -28,6 +28,7 @@ public class NettyClient implements Runnable{
             .newScheduledThreadPool(1);
 
 
+    
     public static void main(String[] args) throws Exception {
         NettyClient nettyClient = new NettyClient();
         nettyClient.connect(NettyConstant.SERVER_PORT

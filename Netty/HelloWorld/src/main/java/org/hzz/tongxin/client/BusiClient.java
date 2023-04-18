@@ -33,6 +33,7 @@ public class BusiClient {
                     }
                 }
                 System.exit(1);
+
             } else if("v".equals(msg.toLowerCase())){
                 User user = new User();
                 user.setAge(19);

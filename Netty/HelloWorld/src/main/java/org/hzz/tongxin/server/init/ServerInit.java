@@ -15,7 +15,7 @@ public class ServerInit extends ChannelInitializer<Channel> {
     protected void initChannel(Channel ch) throws Exception {
         ChannelPipeline p = ch.pipeline();
         // 性能监控
-        p.addLast(new MetricsHandler());
+       // p.addLast(new MetricsHandler());
         // 粘包半包
         p.addLast(new LengthFieldBasedFrameDecoder(65535,0,2,0,2));
         p.addLast(new LengthFieldPrepender(2));
