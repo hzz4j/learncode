@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Mark老师
  * 类说明：客户端Handler的初始化
  * 交给Spring 托管,clientBusiHandler用注入方式实例化后加入Netty的pipeline
  */
