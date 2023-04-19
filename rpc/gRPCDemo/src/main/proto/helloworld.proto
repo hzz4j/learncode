@@ -1,0 +1,24 @@
+syntax="proto3";  //  协议版本号
+
+// 选项配置
+option java_package = "org.hzz.grpc";
+option java_outer_classname = "RPCDateServiceApi";
+option java_multiple_files = true;
+
+package org.hzz.protobuf;
+
+// 服务接口.定义请求参数和相应结果
+service RPCDateService {
+  rpc getDate (RPCDateRequest) returns (RPCDateResponse) {
+  }
+}
+
+// 定义请求体
+message RPCDateRequest {
+  string userName = 1;
+}
+
+// 定义响应内容
+message RPCDateResponse {
+  string serverDate = 1;
+}
