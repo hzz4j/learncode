@@ -17,7 +17,6 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * @author Mark老师
  * 类说明：服务注册中心，服务提供者在启动时需要在注册中心登记自己的信息
  */
 @Service
