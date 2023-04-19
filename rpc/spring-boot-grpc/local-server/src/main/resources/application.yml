@@ -1,0 +1,10 @@
+
+spring:
+  application:
+    name: spring-boot-grpc-server
+# gRPC有关的配置，这里只需要配置服务端口号
+grpc:
+  server:
+    port: 9898
+server:
+  port: 8888
