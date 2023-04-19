@@ -1,0 +1,33 @@
+syntax = "proto3"; // 协议版本(proto3中，在第一行非空白非注释行，必须写：syntax = "proto3";)
+package protocobuff_Demo;
+// 关注1：包名,防止不同 .proto 项目间命名 发生冲突
+
+option java_package = "org.hzz.protobuf";//// 作用：指定生成的类应该放在什么Java包名下
+option java_outer_classname = "Demo";//作用：生成对应.java 文件的类名（不能跟下面message的类名相同）
+// 关注2：option选项,作用：影响 特定环境下 的处理方式
+
+// 关注3：消息模型 作用：真正用于描述 数据结构
+// 下面详细说明
+// 生成 Person 消息对象（包含多个字段，下面详细说明）
+message Person {
+     string name = 1;//(proto3消息定义时，移除了 “required”、 “optional” ：)
+     int32 id = 2;//(proto3消息定义时，移除了 “required”、 “optional” ：)
+     string email = 3;//(proto3消息定义时，移除了 “required”、 “optional” ：)
+
+    enum PhoneType {
+        MOBILE = 0;
+        HOME = 1;
+        WORK = 2;
+    }
+
+    message PhoneNumber {
+        string number = 1;
+        PhoneType type = 2 ;//(proto3消息定义时,移除了 default 选项：)
+    }
+
+    repeated PhoneNumber phone = 4;
+}
+
+message AddressBook {
+    repeated Person person = 1;
+}
