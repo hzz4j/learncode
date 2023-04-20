@@ -1,22 +1,19 @@
 server:
-  port: 8040
+  port: 8886
 spring:
   application:
     name: storage-service
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.187.135:8848
-        namespace: b0748044-d986-470a-90d4-d463382fdc8b
-    alibaba:
-      seata:
-        tx-service-group: my_test_tx_group
+        server-addr: 192.168.135.1:8848
+        namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.187.135:3306/seata_storage?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://192.168.135.130:3306/seata_storage?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
       username: root
       password: Root.123456
       initial-size: 10
@@ -42,17 +39,20 @@ spring:
           config:
             multi-statement-allow: true
 seata:
-  tx-service-group: my_test_tx_group
+  application-id: ${spring.application.name}
+  tx-service-group: default_tx_group
   registry:
     type: nacos
     nacos:
-      server-addr: 192.168.187.135:8848
-      namespace: b0748044-d986-470a-90d4-d463382fdc8b
+      application: seata-server
+      server-addr: 192.168.135.1:8848
+      namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
       group: SEATA_GROUP
   config:
     type: nacos
     nacos:
-      server-addr: 192.168.187.135:8848
-      namespace: b0748044-d986-470a-90d4-d463382fdc8b
+      server-addr: 192.168.135.1:8848
+      namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
       group: SEATA_GROUP
+      data-id: seataServer.properties
 

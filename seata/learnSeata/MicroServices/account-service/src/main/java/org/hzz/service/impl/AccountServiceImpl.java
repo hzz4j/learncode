@@ -15,6 +15,8 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountMapper accountMapper;
 
+    private final String ERROR_USER_ID = "2";
+
     /**
      * 扣减用户金额
      * @param userId
@@ -31,10 +33,10 @@ public class AccountServiceImpl implements AccountService {
         log.info("开始扣减用户 {} 余额", userId);
         Integer record = accountMapper.reduceBalance(userId,money);
 
-//        if (ERROR_USER_ID.equals(userId)) {
-//            // 模拟异常
-//            throw new RuntimeException("account branch exception");
-//        }
+        if (ERROR_USER_ID.equals(userId)) {
+            // 模拟异常
+            throw new RuntimeException("account branch exception");
+        }
         log.info("扣减用户 {} 余额结果:{}", userId, record > 0 ? "操作成功" : "扣减余额失败");
     }
 
