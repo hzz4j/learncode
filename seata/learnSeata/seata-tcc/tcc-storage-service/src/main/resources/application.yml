@@ -42,16 +42,19 @@ seata:
   # seata 服务分组，要与服务端配置service.vgroup_mapping的后缀对应
   tx-service-group: default_tx_group
   config:
+    type: nacos
     nacos:
       server-addr: 192.168.135.1:8848
       group: SEATA_GROUP
       namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
       data-id: seataServer.properties
   registry:
+    type: nacos
     nacos:
       application: seata-server
       server-addr: 192.168.135.1:8848
       group: SEATA_GROUP
       namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
+
 server:
   port: 8886
