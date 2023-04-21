@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: tcc-order-service
+  cloud:
+    nacos:
+      discovery:
+        ip: 192.168.135.1:8848
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.135.130:3306/seata_tcc_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: Root.123456
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: false
+        wall:
+          config:
+            multi-statement-allow: true
+seata:
+  application-id: ${spring.application.name}
+  # seata 服务分组，要与服务端配置service.vgroup_mapping的后缀对应
+  tx-service-group: default_tx_group
+  config:
+    nacos:
+      server-addr: 192.168.135.1:8848
+      group: SEATA_GROUP
+      namespace: ""
+      data-id: seataServer.properties
+  registry:
+    nacos:
+      application: seata-server
+      server-addr: 192.168.135.1:8848
+      group: SEATA_GROUP
+      namespace: ""
