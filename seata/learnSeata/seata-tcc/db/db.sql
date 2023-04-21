@@ -48,6 +48,7 @@ CREATE TABLE `account_tbl`
 
 
 
+-- -------------------------------- The script use tcc fence  --------------------------------
 CREATE TABLE IF NOT EXISTS `tcc_fence_log`
 (
     `xid`           VARCHAR(128)  NOT NULL COMMENT 'global id',

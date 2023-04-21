@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: tcc-storage-service
+    name: tcc-account-service
   cloud:
     nacos:
       discovery:
@@ -11,7 +11,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.135.130:3306/seata_tcc_storage?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://192.168.135.130:3306/seata_tcc_account?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
     password: Root.123456
     druid:
@@ -54,4 +54,4 @@ seata:
       group: SEATA_GROUP
       namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
 server:
-  port: 8886
+  port: 8887
