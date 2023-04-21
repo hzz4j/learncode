@@ -23,7 +23,7 @@
         <spring.cloud.alibaba.version>2.2.9.RELEASE</spring.cloud.alibaba.version>
         <mybatis.version>2.1.1</mybatis.version>
         <mysql-jdbc.version>8.0.16</mysql-jdbc.version>
-        <druid.version>1.2.6</druid.version>
+        <druid.version>1.1.21</druid.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -63,13 +63,11 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <scope>runtime</scope>
                 <version>${mysql-jdbc.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>com.alibaba</groupId>
-                <artifactId>druid</artifactId>
+                <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid.version}</version>
             </dependency>
 

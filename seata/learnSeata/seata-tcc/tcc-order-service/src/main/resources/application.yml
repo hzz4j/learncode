@@ -1,3 +1,4 @@
+
 spring:
   application:
     name: tcc-order-service
@@ -5,13 +6,15 @@ spring:
     nacos:
       discovery:
         ip: 192.168.135.1:8848
+        namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
+
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.135.130:3306/seata_tcc_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Root.123456
     druid:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.135.130:3306/seata_tcc_order?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-      username: root
-      password: Root.123456
       initial-size: 10
       max-active: 100
       min-idle: 10
@@ -42,11 +45,13 @@ seata:
     nacos:
       server-addr: 192.168.135.1:8848
       group: SEATA_GROUP
-      namespace: ""
+      namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
       data-id: seataServer.properties
   registry:
     nacos:
       application: seata-server
       server-addr: 192.168.135.1:8848
       group: SEATA_GROUP
-      namespace: ""
+      namespace: c3f112d8-1c5e-419e-9c83-b0b26b987a42
+server:
+  port: 8888
