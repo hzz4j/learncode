@@ -27,7 +27,7 @@ public class BusinessServiceImpl implements BussinessService {
 
 
     @Override
-    @GlobalTransactional(name = "create-order",rollbackFor = Exception.class)
+    @GlobalTransactional(name = "createOrder",rollbackFor = Exception.class)
     public Order saveOrder(OrderVo orderVo) {
         log.info("=============用户下单=================");
         log.info("当前 XID: {}", RootContext.getXID());
