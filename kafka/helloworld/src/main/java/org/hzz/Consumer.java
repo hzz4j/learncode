@@ -1,18 +1,12 @@
 package org.hzz;
 
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.hzz.utils.Consts;
-import org.hzz.vo.User;
 
 import java.util.Collections;
 import java.util.Properties;
@@ -50,7 +44,7 @@ public class Consumer {
             for (; ; ) {
                 // 拉去数据
                 ConsumerRecords<String, String> records = consumer.poll(1000);
-                if(records.count()!=0 ) System.out.println("总共消息数量: "+records.count());
+                if (records.count() != 0) System.out.println("总共消息数量: " + records.count());
                 // 获取分区
                 Set<TopicPartition> partitions = records.partitions();
                 for (TopicPartition partition : partitions) {
