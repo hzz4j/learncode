@@ -4,13 +4,14 @@ server:
     context-path: /docker
 spring:
   redis:
-    host: redis
+    host: redis  # docker compose??redis???
     port: 6379
     database: 0
 
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+    # docker compose??mysql8?????db
     url: jdbc:mysql://db:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: Root.123456
