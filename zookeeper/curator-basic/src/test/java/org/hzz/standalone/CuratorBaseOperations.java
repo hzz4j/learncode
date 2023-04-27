@@ -76,7 +76,8 @@ public class CuratorBaseOperations extends CuratorStandaloneBase{
     public void testThreadPool() throws Exception {
 
         CuratorFramework curatorFramework = getCuratorFramework();
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        ExecutorService
+                executorService = Executors.newSingleThreadExecutor();
         String ZK_NODE="/zk-node";
         curatorFramework.getData().inBackground((client, event) -> {
             log.info(" background: {}", event);
