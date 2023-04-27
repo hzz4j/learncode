@@ -1,7 +1,8 @@
-package org.hzz.lock.zk;
+package org.hzz.lock.zk.unfairlock;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hzz.lock.Lock;
+import org.hzz.lock.zk.ZookeeperFactory;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
