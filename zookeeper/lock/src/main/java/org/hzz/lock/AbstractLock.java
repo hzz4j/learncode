@@ -7,7 +7,7 @@ public abstract class AbstractLock implements Lock{
     @Override
     public void lock() {
         if(tryLock()){
-            log.info("获取锁");
+            System.out.println(Thread.currentThread().getName() + ": 获取锁");
         }else{
             waitLock();
             lock();
