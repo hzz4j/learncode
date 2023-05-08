@@ -1,0 +1,12 @@
+server:
+  port: 8886
+spring:
+  application:
+    name: mall-order
+
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181
+      discovery:
+        instance-host: 127.0.0.1
+        instance-port: ${server.port}
