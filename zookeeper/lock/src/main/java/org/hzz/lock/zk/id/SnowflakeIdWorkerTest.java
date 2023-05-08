@@ -39,3 +39,7 @@ public class SnowflakeIdWorkerTest {
  * 21:29:05.350 SnowflakeIdWorkerTest [Thread-3] : workdId:0000000002 生产 id:7057707296515694593
  * 21:29:05.350 SnowflakeIdWorkerTest [Thread-3] : workdId:0000000002 生产 id:7057707296515694594
  */
+
+
+
+
