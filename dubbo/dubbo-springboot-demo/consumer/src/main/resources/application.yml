@@ -1,0 +1,8 @@
+dubbo:
+  application:
+    name: dubbo-springboot-demo-consumer
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://${zookeeper.address:172.29.96.105}:2181
