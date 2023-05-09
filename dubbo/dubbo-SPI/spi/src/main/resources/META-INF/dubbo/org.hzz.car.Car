@@ -1,0 +1,3 @@
+red=org.hzz.car.RedCar
+black=org.hzz.car.BlackCar
+org.hzz.car.CarWrapper
