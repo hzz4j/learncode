@@ -1,5 +1,7 @@
 package org.hzz.car;
 
+import org.apache.dubbo.common.URL;
+
 public class CarWrapper implements Car{
     private Car car;
 
@@ -8,8 +10,8 @@ public class CarWrapper implements Car{
     }
 
     @Override
-    public void name() {
+    public void name(URL url) {
         System.out.println("I am a car wrapper");
-        car.name();
+        car.name(url);
     }
 }
