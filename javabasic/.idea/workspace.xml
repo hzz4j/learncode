@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="" />
+    <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/IntegerSimpleTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/IntegerSimpleTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/IntegerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/StringSimple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/ChongzaiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/FinalReferenceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/FinalVar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/StringBuilderNotSafeDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/StringEqualsDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/finaltt/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/finaltt/IA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/inner/OutClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/inner/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/list/ArrayListDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +36,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -42,13 +65,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Github/learncode/javabasic&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.hzz.aop.adapter" />
@@ -57,20 +90,20 @@
       <recent name="D:\learncode\javabasic\libs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.hzz.autobox" />
       <recent name="org.hzz.aop.advice.impl" />
       <recent name="org.hzz.aop.annotations" />
       <recent name="org.hzz.aop.adapter" />
       <recent name="org.hzz.aop.interceptor.impl" />
-      <recent name="org.hzz.aop.advice" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.MyAopTestMain">
-    <configuration name="MainTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.lambd.MainTest" />
+  <component name="RunManager" selected="Application.ArrayListDemo">
+    <configuration name="ArrayListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.list.ArrayListDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.lambd.*" />
+          <option name="PATTERN" value="org.hzz.interviews.list.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -78,12 +111,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MallOrderService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.udp.MallOrderService" />
+    <configuration name="FinalReferenceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.FinalReferenceTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.udp.*" />
+          <option name="PATTERN" value="org.hzz.interviews.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -91,12 +124,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MallOrderService2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.udp.MallOrderService2" />
+    <configuration name="OutClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.inner.OutClass" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.udp.*" />
+          <option name="PATTERN" value="org.hzz.interviews.inner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -104,12 +137,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyAopTestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.aop.MyAopTestMain" />
+    <configuration name="StringBuilderNotSafeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.StringBuilderNotSafeDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.aop.*" />
+          <option name="PATTERN" value="org.hzz.interviews.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -117,12 +150,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="NacosServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.udp.NacosServer" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.inner.Test" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.udp.*" />
+          <option name="PATTERN" value="org.hzz.interviews.inner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -132,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.MyAopTestMain" />
-        <item itemvalue="应用程序.MainTest (1)" />
-        <item itemvalue="应用程序.NacosServer" />
-        <item itemvalue="应用程序.MallOrderService2" />
-        <item itemvalue="应用程序.MallOrderService" />
+        <item itemvalue="Application.ArrayListDemo" />
+        <item itemvalue="Application.StringBuilderNotSafeDemo" />
+        <item itemvalue="Application.OutClass" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.FinalReferenceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -164,6 +197,10 @@
       <workItem from="1653922294895" duration="9332000" />
       <workItem from="1654056816059" duration="18471000" />
       <workItem from="1654084180697" duration="239000" />
+      <workItem from="1683714971363" duration="4872000" />
+      <workItem from="1683775342774" duration="816000" />
+      <workItem from="1683793909454" duration="11024000" />
+      <workItem from="1683813921690" duration="33000" />
     </task>
     <servers />
   </component>
