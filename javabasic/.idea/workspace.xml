@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ThenApplyDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ThenComposeDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ThenapplyVsThenComposeDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hzz/completablefuture/WhenCompleteOrExceptionallyDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/WhenCompleteOrExceptionallyDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,20 +85,7 @@
       <recent name="org.hzz.aop.interceptor.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WhenCompleteOrExceptionallyDemo">
-    <configuration name="AsyncDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.AsyncDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.random.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.ThenapplyVsThenComposeDemo">
     <configuration name="PseudoRandomNumberDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.random.PseudoRandomNumberDemo" />
       <module name="javabasic" />
@@ -110,12 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RandomTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.random.RandomTest" />
+    <configuration name="ThenApplyDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ThenApplyDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.random.*" />
+          <option name="PATTERN" value="org.hzz.completablefuture.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,12 +112,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.inner.StringTest" />
+    <configuration name="ThenComposeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ThenComposeDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.inner.*" />
+          <option name="PATTERN" value="org.hzz.completablefuture.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThenapplyVsThenComposeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ThenapplyVsThenComposeDemo" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.completablefuture.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ThenapplyVsThenComposeDemo" />
+        <item itemvalue="Application.ThenComposeDemo" />
+        <item itemvalue="Application.ThenApplyDemo" />
         <item itemvalue="Application.WhenCompleteOrExceptionallyDemo" />
         <item itemvalue="Application.PseudoRandomNumberDemo" />
-        <item itemvalue="Application.RandomTest" />
-        <item itemvalue="Application.AsyncDemo" />
-        <item itemvalue="Application.StringTest" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +192,7 @@
       <workItem from="1683824430645" duration="1682000" />
       <workItem from="1683869507998" duration="602000" />
       <workItem from="1683891188506" duration="701000" />
-      <workItem from="1684074864926" duration="4719000" />
+      <workItem from="1684074864926" duration="6257000" />
     </task>
     <servers />
   </component>
