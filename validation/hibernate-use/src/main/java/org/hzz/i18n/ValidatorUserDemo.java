@@ -1,5 +1,6 @@
-package org.hzz;
+package org.hzz.i18n;
 
+import org.hibernate.validator.resourceloading.PlatformResourceBundleLocator;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
+import java.util.Locale;
 import java.util.Set;
 
 public class ValidatorUserDemo {
@@ -21,8 +23,18 @@ public class ValidatorUserDemo {
 
     @BeforeEach
     public void init(){
-        System.out.println("init");
-        validator = Validation.buildDefaultValidatorFactory().getValidator();
+        // 设置默认的locale
+        // 因为Hibernator的ResourceBundleMessageInterpolator默认使用的是Locale.getDefault()
+//        Locale.setDefault(Locale.JAPAN);
+//        Locale.setDefault(Locale.ENGLISH);
+        Locale.setDefault(Locale.CHINESE);
+
+        validator = Validation.byDefaultProvider()
+                .configure()
+                .messageInterpolator(new MyMessageInterpolator())
+                .buildValidatorFactory()
+                .getValidator();
+
         user = new User();
     }
 
