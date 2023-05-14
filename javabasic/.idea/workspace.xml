@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/file/FileTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/inner/StringTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/AsyncDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/WhenCompleteOrExceptionallyDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/random/PseudoRandomNumberDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/random/RandomTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,13 +86,13 @@
       <recent name="org.hzz.aop.interceptor.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StringTest">
-    <configuration name="ArrayListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.list.ArrayListDemo" />
+  <component name="RunManager" selected="Application.PseudoRandomNumberDemo">
+    <configuration name="AsyncDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.AsyncDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.interviews.list.*" />
+          <option name="PATTERN" value="org.hzz.random.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -98,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.file.FileTest" />
+    <configuration name="PseudoRandomNumberDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.random.PseudoRandomNumberDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.file.*" />
+          <option name="PATTERN" value="org.hzz.random.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -111,25 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OutClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.inner.OutClass" />
+    <configuration name="RandomTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.random.RandomTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.interviews.inner.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StringBuilderNotSafeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.StringBuilderNotSafeDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.interviews.*" />
+          <option name="PATTERN" value="org.hzz.random.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,13 +139,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WhenCompleteOrExceptionallyDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.WhenCompleteOrExceptionallyDemo" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.random.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PseudoRandomNumberDemo" />
+        <item itemvalue="Application.RandomTest" />
+        <item itemvalue="Application.WhenCompleteOrExceptionallyDemo" />
+        <item itemvalue="Application.AsyncDemo" />
         <item itemvalue="Application.StringTest" />
-        <item itemvalue="Application.FileTest" />
-        <item itemvalue="Application.ArrayListDemo" />
-        <item itemvalue="Application.StringBuilderNotSafeDemo" />
-        <item itemvalue="Application.OutClass" />
       </list>
     </recent_temporary>
   </component>
@@ -191,6 +193,7 @@
       <workItem from="1683824430645" duration="1682000" />
       <workItem from="1683869507998" duration="602000" />
       <workItem from="1683891188506" duration="701000" />
+      <workItem from="1684074864926" duration="2774000" />
     </task>
     <servers />
   </component>
