@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 @Data
 public class User {
 
-//    @NotNull(message = "{user.id.notnull}")
+    @NotNull(message = "{user.id.notnull}")
     private String userId;
     @NotNull
     // 未指定,使用hibernate validator提供的默认的国际化

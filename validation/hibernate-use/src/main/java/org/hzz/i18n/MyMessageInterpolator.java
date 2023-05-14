@@ -2,10 +2,6 @@ package org.hzz.i18n;
 
 import org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator;
 import org.hibernate.validator.resourceloading.PlatformResourceBundleLocator;
-import org.hibernate.validator.spi.resourceloading.ResourceBundleLocator;
-
-
-import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 /**
@@ -16,6 +12,8 @@ import java.util.Locale;
  */
 public class MyMessageInterpolator extends ResourceBundleMessageInterpolator {
     private static final String path = "i18n/user";
+    // hibernate validator的写法
+//    private static final String path = "i18n.user";
     public MyMessageInterpolator(){
         // 指定ResourceBundleLocator
         super(new PlatformResourceBundleLocator(path));
@@ -29,7 +27,7 @@ public class MyMessageInterpolator extends ResourceBundleMessageInterpolator {
 
     @Override
     public String interpolate(String messageTemplate, Context context, Locale locale) {
-
+        // 这个方法没用到
         return null;
     }
 }

@@ -52,5 +52,11 @@ public class ValidatorUserDemo {
             System.out.println(r.getMessage());
         });
     }
-
 }
+/**
+ * ConstraintViolationImpl{interpolatedMessage='不得为 null', propertyPath=userName, rootBeanClass=class org.hzz.i18n.User, messageTemplate='{javax.validation.constraints.NotNull.message}'}
+ * ConstraintViolationImpl{interpolatedMessage='userID不能为null', propertyPath=userId, rootBeanClass=class org.hzz.i18n.User, messageTemplate='{user.id.notnull}'}
+ * -------------------------
+ * 不得为 null
+ * userID不能为null
+ */
