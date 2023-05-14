@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/IntegerSimpleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/IntegerSimpleTest2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/IntegerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/autobox/StringSimple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/ChongzaiTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/FinalReferenceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/FinalVar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/StringBuilderNotSafeDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/StringEqualsDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/finaltt/A.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/finaltt/IA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/inner/OutClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/inner/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/interviews/list/ArrayListDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/file/FileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/inner/StringTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +84,7 @@
       <recent name="org.hzz.aop.interceptor.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ArrayListDemo">
+  <component name="RunManager" selected="Application.StringTest">
     <configuration name="ArrayListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.list.ArrayListDemo" />
       <module name="javabasic" />
@@ -111,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FinalReferenceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.FinalReferenceTest" />
+    <configuration name="FileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.file.FileTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.interviews.*" />
+          <option name="PATTERN" value="org.hzz.file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -150,12 +137,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.interviews.inner.Test" />
+    <configuration name="StringTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.inner.StringTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.interviews.inner.*" />
+          <option name="PATTERN" value="org.hzz.inner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -165,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.StringTest" />
+        <item itemvalue="Application.FileTest" />
         <item itemvalue="Application.ArrayListDemo" />
         <item itemvalue="Application.StringBuilderNotSafeDemo" />
         <item itemvalue="Application.OutClass" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.FinalReferenceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -201,6 +188,9 @@
       <workItem from="1683775342774" duration="816000" />
       <workItem from="1683793909454" duration="11024000" />
       <workItem from="1683813921690" duration="33000" />
+      <workItem from="1683824430645" duration="1682000" />
+      <workItem from="1683869507998" duration="602000" />
+      <workItem from="1683891188506" duration="701000" />
     </task>
     <servers />
   </component>
