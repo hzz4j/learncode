@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/AsyncDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/WhenCompleteOrExceptionallyDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/random/PseudoRandomNumberDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/random/RandomTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hzz/completablefuture/WhenCompleteOrExceptionallyDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/WhenCompleteOrExceptionallyDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +83,7 @@
       <recent name="org.hzz.aop.interceptor.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PseudoRandomNumberDemo">
+  <component name="RunManager" selected="Application.WhenCompleteOrExceptionallyDemo">
     <configuration name="AsyncDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.AsyncDemo" />
       <module name="javabasic" />
@@ -154,9 +151,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WhenCompleteOrExceptionallyDemo" />
         <item itemvalue="Application.PseudoRandomNumberDemo" />
         <item itemvalue="Application.RandomTest" />
-        <item itemvalue="Application.WhenCompleteOrExceptionallyDemo" />
         <item itemvalue="Application.AsyncDemo" />
         <item itemvalue="Application.StringTest" />
       </list>
@@ -193,7 +190,7 @@
       <workItem from="1683824430645" duration="1682000" />
       <workItem from="1683869507998" duration="602000" />
       <workItem from="1683891188506" duration="701000" />
-      <workItem from="1684074864926" duration="2774000" />
+      <workItem from="1684074864926" duration="4719000" />
     </task>
     <servers />
   </component>
@@ -210,5 +207,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/javabasic$WhenCompleteOrExceptionallyDemo.ic" NAME="WhenCompleteOrExceptionallyDemo Coverage Results" MODIFIED="1684078727534" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.hzz.random.*</FILTER>
+    </SUITE>
   </component>
 </project>
