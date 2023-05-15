@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ApplyToEitherDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hzz/completablefuture/ApplyToEitherDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ApplyToEitherDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +190,7 @@
       <workItem from="1683869507998" duration="602000" />
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
-      <workItem from="1684115444156" duration="2577000" />
+      <workItem from="1684115444156" duration="2633000" />
     </task>
     <servers />
   </component>

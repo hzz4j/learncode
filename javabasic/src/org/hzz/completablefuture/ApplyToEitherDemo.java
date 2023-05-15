@@ -37,5 +37,12 @@ public class ApplyToEitherDemo {
             }
         };
     }
-
 }
+/**
+ * future2 start
+ * future1 start
+ * future1 end, result = 1
+ * 最快的结果: 1
+ * 最终结果：2
+ * future2 end, result = 7
+ */
