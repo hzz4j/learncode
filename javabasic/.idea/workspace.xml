@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/time/eight/DurationDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/time/eight/LastDayOfCurrentMonthDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/time/eight/PeriodDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/set/HashSetDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/set/LinkedHashSetDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/set/TreeSetDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/vector/VectorDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,20 +79,20 @@
       <recent name="D:\learncode\javabasic\libs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.hzz.collection.set" />
       <recent name="org.hzz.completablefuture" />
       <recent name="org.hzz.autobox" />
       <recent name="org.hzz.aop.advice.impl" />
       <recent name="org.hzz.aop.annotations" />
-      <recent name="org.hzz.aop.adapter" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PeriodDemo">
-    <configuration name="DateTimeFormatterDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.time.eight.DateTimeFormatterDemo" />
+  <component name="RunManager" selected="Application.HashSetDemo">
+    <configuration name="HashSetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.set.HashSetDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.time.eight.*" />
+          <option name="PATTERN" value="org.hzz.collection.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,38 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DateToLocalDateDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.time.eight.DateToLocalDateDemo" />
+    <configuration name="LinkedHashSetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.set.LinkedHashSetDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.time.eight.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DurationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.time.eight.DurationDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.time.eight.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LastDayOfCurrentMonthDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.time.eight.LastDayOfCurrentMonthDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.time.eight.*" />
+          <option name="PATTERN" value="org.hzz.collection.set.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -151,13 +126,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TreeSetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.set.TreeSetDemo" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.collection.set.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VectorDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.vector.VectorDemo" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.collection.vector.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HashSetDemo" />
+        <item itemvalue="Application.LinkedHashSetDemo" />
+        <item itemvalue="Application.TreeSetDemo" />
+        <item itemvalue="Application.VectorDemo" />
         <item itemvalue="Application.PeriodDemo" />
-        <item itemvalue="Application.DurationDemo" />
-        <item itemvalue="Application.LastDayOfCurrentMonthDemo" />
-        <item itemvalue="Application.DateTimeFormatterDemo" />
-        <item itemvalue="Application.DateToLocalDateDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +194,8 @@
       <workItem from="1683869507998" duration="602000" />
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
-      <workItem from="1684115444156" duration="19224000" />
+      <workItem from="1684115444156" duration="20251000" />
+      <workItem from="1684140524318" duration="2149000" />
     </task>
     <servers />
   </component>
