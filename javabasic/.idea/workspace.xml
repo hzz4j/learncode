@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/RunAfterBothDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/RunAfterEitherDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/AllOfDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/AnyOfDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ThenAcceptDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hzz/completablefuture/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,9 +86,9 @@
       <recent name="org.hzz.aop.adapter" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RunAfterBothDemo">
-    <configuration name="ApplyToEitherDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ApplyToEitherDemo" />
+  <component name="RunManager" selected="Application.ThenAcceptDemo">
+    <configuration name="AllOfDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.AllOfDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
@@ -98,8 +100,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ListenerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ListenerTest" />
+    <configuration name="AnyOfDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.AnyOfDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
@@ -137,8 +139,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThenCombineDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ThenCombineDemo" />
+    <configuration name="ThenAcceptDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ThenAcceptDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
@@ -152,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ThenAcceptDemo" />
+        <item itemvalue="Application.AllOfDemo" />
+        <item itemvalue="Application.AnyOfDemo" />
         <item itemvalue="Application.RunAfterBothDemo" />
         <item itemvalue="Application.RunAfterEitherDemo" />
-        <item itemvalue="Application.ApplyToEitherDemo" />
-        <item itemvalue="Application.ThenCombineDemo" />
-        <item itemvalue="Application.ListenerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +194,7 @@
       <workItem from="1683869507998" duration="602000" />
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
-      <workItem from="1684115444156" duration="3265000" />
+      <workItem from="1684115444156" duration="4973000" />
     </task>
     <servers />
   </component>

@@ -10,4 +10,8 @@ public class Utils {
             throw new RuntimeException(e);
         }
     }
+
+    public static void sleepRandomSeconds() {
+        sleepSeconds((int) (Math.random() * 10));
+    }
 }
