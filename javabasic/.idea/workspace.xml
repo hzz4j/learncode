@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/combine/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/combine/CombineTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparator/ComparatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparator/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/map/TreeMapDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/map/enummap/DayOfWeek.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/map/enummap/DayOfWeekConsts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/map/enummap/EnumMapTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,9 +20,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
+        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -87,7 +87,7 @@
       <recent name="org.hzz.aop.annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CombineTest">
+  <component name="RunManager" selected="Application.EnumMapTest">
     <configuration name="CombineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.collection.combine.CombineTest" />
       <module name="javabasic" />
@@ -127,6 +127,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EnumMapTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.map.enummap.EnumMapTest" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.collection.map.enummap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HashSetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.collection.set.HashSetDemo" />
       <module name="javabasic" />
@@ -140,26 +153,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedHashSetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.set.LinkedHashSetDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.collection.set.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EnumMapTest" />
         <item itemvalue="Application.CombineTest" />
         <item itemvalue="Application.ComparatorTest" />
         <item itemvalue="Application.ComparableTest" />
         <item itemvalue="Application.HashSetDemo" />
-        <item itemvalue="Application.LinkedHashSetDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +196,7 @@
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
       <workItem from="1684115444156" duration="20251000" />
-      <workItem from="1684140524318" duration="6239000" />
+      <workItem from="1684140524318" duration="9355000" />
     </task>
     <servers />
   </component>
