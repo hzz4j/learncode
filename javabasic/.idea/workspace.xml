@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/set/HashSetDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/set/LinkedHashSetDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/set/TreeSetDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/vector/VectorDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparable/ComparableTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparable/Dog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javabasic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javabasic.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,28 +53,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Github/learncode/javabasic&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Github/learncode/javabasic/libs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.hzz.aop.adapter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\learncode\javabasic\libs" />
       <recent name="D:\learncode\javabasic\libs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -86,7 +86,20 @@
       <recent name="org.hzz.aop.annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HashSetDemo">
+  <component name="RunManager" selected="Application.ComparableTest">
+    <configuration name="ComparableTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.comparable.ComparableTest" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.collection.comparable.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HashSetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.collection.set.HashSetDemo" />
       <module name="javabasic" />
@@ -106,19 +119,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.hzz.collection.set.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PeriodDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.time.eight.PeriodDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.time.eight.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ComparableTest" />
         <item itemvalue="Application.HashSetDemo" />
         <item itemvalue="Application.LinkedHashSetDemo" />
         <item itemvalue="Application.TreeSetDemo" />
         <item itemvalue="Application.VectorDemo" />
-        <item itemvalue="Application.PeriodDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +195,7 @@
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
       <workItem from="1684115444156" duration="20251000" />
-      <workItem from="1684140524318" duration="2149000" />
+      <workItem from="1684140524318" duration="3879000" />
     </task>
     <servers />
   </component>
