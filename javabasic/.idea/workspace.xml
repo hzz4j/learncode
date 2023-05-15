@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/CloneTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/Dog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallow/ShallowClone.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallow/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallowproblem/City.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallowproblem/ShallowProblemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallowproblem/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/deep/clone/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/deep/clone/DeepCloneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/deep/clone/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/deep/two/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/deep/two/CloneUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/deep/two/DeepCloneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/deep/two/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +62,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Github/learncode/javabasic/libs",
+    "last_opened_file_path": "D:/Github/learncode/javabasic/src/org/hzz/clone/deep/two",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -79,6 +79,8 @@
       <recent name="org.hzz.aop.adapter" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Github\learncode\javabasic\src\org\hzz\clone\deep\two" />
+      <recent name="D:\Github\learncode\javabasic\src\org\hzz\clone\deep\clone" />
       <recent name="D:\Github\learncode\javabasic\libs" />
       <recent name="D:\learncode\javabasic\libs" />
     </key>
@@ -90,7 +92,7 @@
       <recent name="org.hzz.aop.advice.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ShallowProblemTest">
+  <component name="RunManager" selected="Application.org.hzz.clone.deep.two.DeepCloneTest">
     <configuration name="CloneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.clone.CloneTest" />
       <module name="javabasic" />
@@ -104,12 +106,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EnumMapTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.map.enummap.EnumMapTest" />
+    <configuration name="DeepCloneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.clone.deep.clone.DeepCloneTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.collection.map.enummap.*" />
+          <option name="PATTERN" value="org.hzz.clone.deep.clone.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,12 +145,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TreeMapDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.map.TreeMapDemo" />
+    <configuration name="org.hzz.clone.deep.two.DeepCloneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.clone.deep.two.DeepCloneTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.collection.map.*" />
+          <option name="PATTERN" value="org.hzz.clone.deep.two.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -158,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.hzz.clone.deep.two.DeepCloneTest" />
+        <item itemvalue="Application.DeepCloneTest" />
         <item itemvalue="Application.ShallowProblemTest" />
         <item itemvalue="Application.ShallowClone" />
         <item itemvalue="Application.CloneTest" />
-        <item itemvalue="Application.TreeMapDemo" />
-        <item itemvalue="Application.EnumMapTest" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +201,7 @@
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
       <workItem from="1684115444156" duration="20251000" />
-      <workItem from="1684140524318" duration="13019000" />
+      <workItem from="1684140524318" duration="14250000" />
     </task>
     <servers />
   </component>
