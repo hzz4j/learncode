@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ThenCombineDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/ApplyToEitherDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/completablefuture/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,9 +84,9 @@
       <recent name="org.hzz.aop.interceptor.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ThenCombineDemo">
-    <configuration name="ListenerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ListenerTest" />
+  <component name="RunManager" selected="Application.ApplyToEitherDemo">
+    <configuration name="ApplyToEitherDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ApplyToEitherDemo" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
@@ -97,8 +98,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThenApplyDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ThenApplyDemo" />
+    <configuration name="ListenerTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.completablefuture.ListenerTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
@@ -151,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ApplyToEitherDemo" />
         <item itemvalue="Application.ThenCombineDemo" />
         <item itemvalue="Application.ListenerTest" />
         <item itemvalue="Application.ThenapplyVsThenComposeDemo" />
         <item itemvalue="Application.ThenComposeDemo" />
-        <item itemvalue="Application.ThenApplyDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +192,7 @@
       <workItem from="1683869507998" duration="602000" />
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
-      <workItem from="1684115444156" duration="1142000" />
+      <workItem from="1684115444156" duration="2577000" />
     </task>
     <servers />
   </component>
