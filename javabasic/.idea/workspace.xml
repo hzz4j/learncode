@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/CloneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallow/ShallowClone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallow/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallowproblem/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallowproblem/ShallowProblemTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/clone/shallowproblem/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/hzz/collection/map/TreeMapDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hzz/collection/map/TreeMapDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +23,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,46 +83,20 @@
       <recent name="D:\learncode\javabasic\libs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.hzz.clone.shallow" />
       <recent name="org.hzz.collection.set" />
       <recent name="org.hzz.completablefuture" />
       <recent name="org.hzz.autobox" />
       <recent name="org.hzz.aop.advice.impl" />
-      <recent name="org.hzz.aop.annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TreeMapDemo">
-    <configuration name="CombineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.combine.CombineTest" />
+  <component name="RunManager" selected="Application.ShallowProblemTest">
+    <configuration name="CloneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.clone.CloneTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.collection.combine.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ComparableTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.comparable.ComparableTest" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.collection.comparable.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ComparatorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.comparator.ComparatorTest" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.collection.comparator.*" />
+          <option name="PATTERN" value="org.hzz.clone.shallow.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,6 +110,32 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.hzz.collection.map.enummap.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShallowClone" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.clone.shallow.ShallowClone" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.clone.shallow.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ShallowProblemTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.clone.shallowproblem.ShallowProblemTest" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.clone.shallowproblem.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -152,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShallowProblemTest" />
+        <item itemvalue="Application.ShallowClone" />
+        <item itemvalue="Application.CloneTest" />
         <item itemvalue="Application.TreeMapDemo" />
         <item itemvalue="Application.EnumMapTest" />
-        <item itemvalue="Application.CombineTest" />
-        <item itemvalue="Application.ComparatorTest" />
-        <item itemvalue="Application.ComparableTest" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +199,7 @@
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
       <workItem from="1684115444156" duration="20251000" />
-      <workItem from="1684140524318" duration="10616000" />
+      <workItem from="1684140524318" duration="13019000" />
     </task>
     <servers />
   </component>
