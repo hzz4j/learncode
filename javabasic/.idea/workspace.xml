@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/serialize/Mobile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/serialize/SerializableTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,7 +196,7 @@
       <workItem from="1684074864926" duration="6365000" />
       <workItem from="1684115444156" duration="20251000" />
       <workItem from="1684140524318" duration="14890000" />
-      <workItem from="1684159140485" duration="300000" />
+      <workItem from="1684159140485" duration="1317000" />
     </task>
     <servers />
   </component>
