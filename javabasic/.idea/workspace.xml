@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/serialize/SerializableTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hzz/serialize/Mobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hzz/serialize/Mobile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/hzz/serialize/SerializableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/hzz/serialize/SerializableTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,14 +82,14 @@
       <recent name="D:\learncode\javabasic\libs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.hzz.serialize" />
       <recent name="org.hzz.clone.shallow" />
       <recent name="org.hzz.collection.set" />
       <recent name="org.hzz.completablefuture" />
       <recent name="org.hzz.autobox" />
-      <recent name="org.hzz.aop.advice.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SerializableTest">
+  <component name="RunManager" selected="Application.SerializableTest2">
     <configuration name="DeepCloneTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.clone.deep.clone.DeepCloneTest" />
       <module name="javabasic" />
@@ -113,12 +116,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShallowClone" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.clone.shallow.ShallowClone" />
+    <configuration name="SerializableTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.serialize.SerializableTest2" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.hzz.clone.shallow.*" />
+          <option name="PATTERN" value="org.hzz.serialize.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SerializableTest2" />
         <item itemvalue="Application.SerializableTest" />
         <item itemvalue="Application.org.hzz.clone.deep.two.DeepCloneTest" />
         <item itemvalue="Application.DeepCloneTest" />
         <item itemvalue="Application.ShallowProblemTest" />
-        <item itemvalue="Application.ShallowClone" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +199,7 @@
       <workItem from="1684074864926" duration="6365000" />
       <workItem from="1684115444156" duration="20251000" />
       <workItem from="1684140524318" duration="14890000" />
-      <workItem from="1684159140485" duration="1317000" />
+      <workItem from="1684159140485" duration="2661000" />
     </task>
     <servers />
   </component>

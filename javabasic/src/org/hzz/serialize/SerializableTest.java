@@ -4,7 +4,7 @@ import java.io.*;
 
 public class SerializableTest {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Mobile mobile = new Mobile("iPhone");
+        Mobile mobile = new Mobile("iPhone",null);
 
         System.out.println(mobile);
         // 创建输出流（序列化内容到磁盘）
