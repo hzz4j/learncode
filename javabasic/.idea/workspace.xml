@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a9aa6cc-b9a8-46ad-9b04-282c4ed323f2" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparable/ComparableTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparable/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/combine/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/combine/CombineTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparator/ComparatorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/hzz/collection/comparator/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javabasic.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javabasic.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +87,39 @@
       <recent name="org.hzz.aop.annotations" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ComparableTest">
+  <component name="RunManager" selected="Application.CombineTest">
+    <configuration name="CombineTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.combine.CombineTest" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.collection.combine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ComparableTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.hzz.collection.comparable.ComparableTest" />
       <module name="javabasic" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.hzz.collection.comparable.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComparatorTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.comparator.ComparatorTest" />
+      <module name="javabasic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.hzz.collection.comparator.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,39 +153,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TreeSetDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.set.TreeSetDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.collection.set.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VectorDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.hzz.collection.vector.VectorDemo" />
-      <module name="javabasic" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.hzz.collection.vector.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CombineTest" />
+        <item itemvalue="Application.ComparatorTest" />
         <item itemvalue="Application.ComparableTest" />
         <item itemvalue="Application.HashSetDemo" />
         <item itemvalue="Application.LinkedHashSetDemo" />
-        <item itemvalue="Application.TreeSetDemo" />
-        <item itemvalue="Application.VectorDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +196,7 @@
       <workItem from="1683891188506" duration="701000" />
       <workItem from="1684074864926" duration="6365000" />
       <workItem from="1684115444156" duration="20251000" />
-      <workItem from="1684140524318" duration="3879000" />
+      <workItem from="1684140524318" duration="6239000" />
     </task>
     <servers />
   </component>
