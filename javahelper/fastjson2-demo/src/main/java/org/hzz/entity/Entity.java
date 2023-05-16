@@ -1,4 +1,4 @@
-package org.hzz.jsonpath;
+package org.hzz.entity;
 
 import lombok.Data;
 

@@ -1,6 +1,7 @@
 package org.hzz.jsonpath;
 
 import com.alibaba.fastjson2.JSONPath;
+import org.hzz.entity.Entity;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -33,5 +34,12 @@ public class JsonPathDemo1 {
         entities.add(new Entity("hzz"));
         List<String> result = (List<String>)JSONPath.eval(entities, "$[*].name");
         System.out.println(Arrays.toString(result.toArray())); // [Q10Viking, hzz]
+    }
+
+    @Test
+    public void readNameFromJsonList(){
+        String json = "[{\"id\":1,\"name\":\"Q10Viking\"},{\"name\":\"hzz\"}]";
+        List<String> list = (List<String>)JSONPath.eval(json, "$[*].name");
+        System.out.println(Arrays.toString(list.toArray())); // [Q10Viking, hzz]
     }
 }
