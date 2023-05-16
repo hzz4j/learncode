@@ -12,4 +12,21 @@ public enum Status {
         this.code = code;
         this.desc = desc;
     }
+
+    public static Status fromCode(Integer code){
+        for(Status status:Status.values()){
+            if(status.code.equals(code)){
+                return status;
+            }
+        }
+        return null;
+    }
+
+    public Integer getCode(){
+        return this.code;
+    }
+
+    public String getDesc(){
+        return this.desc;
+    }
 }
