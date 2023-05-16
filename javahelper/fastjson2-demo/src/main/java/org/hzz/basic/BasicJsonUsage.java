@@ -3,6 +3,8 @@ package org.hzz.basic;
 import com.alibaba.fastjson2.JSON;
 import org.hzz.entity.Book;
 import org.hzz.entity.Entity;
+import org.hzz.entity.Result;
+import org.hzz.entity.Status;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -37,4 +39,18 @@ public class BasicJsonUsage {
         // [Entity(id=1, name=Q10Viking, value=null), Entity(id=null, name=hzz, value=null)]
         System.out.println(Arrays.toString(entities.toArray()));
     }
+
+
+    @Test
+    public void test_enum(){
+        Result<int[]> result = new Result(new int[]{3,20}, Status.OK);
+        // 序列化
+        String json = JSON.toJSONString(result);
+        System.out.println(json); // {"data":[3,20],"status":"OK"}
+        // 反序列化
+        Result result1 = JSON.parseObject(json, Result.class);
+        System.out.println(result1);
+        assertEquals(result, result1); // 成功
+    }
+
 }
