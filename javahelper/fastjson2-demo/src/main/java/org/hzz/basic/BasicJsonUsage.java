@@ -40,6 +40,22 @@ public class BasicJsonUsage {
         System.out.println(Arrays.toString(entities.toArray()));
     }
 
+    @Test
+    public void test_list_Integer(){
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+        System.out.println(Arrays.toString(list.toArray()));
+    }
+
+    @Test
+    public void test_array_list(){
+        List<int[]> ints = Arrays.asList(new int[]{3, 20});
+        List<Integer> integers = Arrays.asList(3, 20);
+
+
+    }
+
 
     @Test
     public void test_enum(){

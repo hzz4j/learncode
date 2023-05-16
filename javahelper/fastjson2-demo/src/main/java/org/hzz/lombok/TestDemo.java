@@ -32,15 +32,15 @@ public class TestDemo {
 
     @Test
     public void testResultASolved(){
-        ResultA result1 = new ResultA(Arrays.toString(new int[]{3, 20}));
-        ResultA result2 = new ResultA(Arrays.toString(new int[]{3, 20}));
+        ResultA result1 = new ResultA(Arrays.asList(3, 20));
+        ResultA result2 = new ResultA(Arrays.asList(3, 20));
         assertEquals(result1, result2); // 成功
     }
 
     @Test
     public void testResultBSolved() {
-        ResultB<List<Integer>> result1 = new ResultB(Arrays.toString(new int[]{3, 20}));
-        ResultB<List<Integer>> result2 = new ResultB(Arrays.toString(new int[]{3, 20}));
+        ResultB<List<Integer>> result1 = new ResultB(Arrays.asList(3, 20));
+        ResultB<List<Integer>> result2 = new ResultB(Arrays.asList(3, 20));
         assertEquals(result1, result2); // 成功
     }
 
