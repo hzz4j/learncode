@@ -1,6 +1,7 @@
 package org.hzz.basic;
 
 import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONWriter;
 import org.hzz.entity.Book;
 import org.hzz.entity.Entity;
 import org.hzz.entity.Result;
@@ -24,6 +25,21 @@ public class BasicJsonUsage {
         // assertSame(book, book1); // 失败，报错
         assertEquals(book, book1); // 成功
     }
+
+    @Test
+    public void test_object2(){
+        Book book = new Book();
+        book.setName("Thinking in Java");
+        System.out.println(JSON.toJSONString(book)); // {"name":"Thinking in Java"}
+    }
+
+    @Test
+    public void test_object3(){
+        Book book = new Book();
+        book.setName("Thinking in Java");
+        System.out.println(JSON.toJSONString(book, JSONWriter.Feature.WriteNulls)); // {"author":null,"name":"Thinking in Java"}
+    }
+
     @Test
     public void test_list_tojson(){
         List<Entity> entities = new ArrayList<Entity>();
