@@ -16,11 +16,11 @@
 
     <dependencies>
         <!--   自己开发的jar包     -->
-        <dependency>
-            <groupId>org.hzz</groupId>
-            <artifactId>nexus-utils</artifactId>
-            <version>1.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.hzz</groupId>-->
+<!--            <artifactId>nexus-utils</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.alibaba.fastjson2</groupId>
             <artifactId>fastjson2</artifactId>
@@ -29,11 +29,11 @@
     </dependencies>
 
     <repositories>
-        <repository>
-            <id>central</id>
-            <name>Central Repository</name>
-            <url>https://repo1.maven.org/maven2/</url>
-        </repository>
+<!--        <repository>-->
+<!--            <id>central</id>-->
+<!--            <name>Central Repository</name>-->
+<!--            <url>https://repo1.maven.org/maven2/</url>-->
+<!--        </repository>-->
         <repository>
             <id>nexus-central</id>
             <name>Central Repository</name>
