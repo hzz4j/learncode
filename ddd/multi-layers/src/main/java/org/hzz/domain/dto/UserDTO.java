@@ -17,9 +17,7 @@ public class UserDTO {
     @NotBlank(message = "用户名不能为空")
     private String username;
     private String password;
-
     @NotNull(message = "邮箱不能为空")
     private String email;
-
     private Date created;
 }

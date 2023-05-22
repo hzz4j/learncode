@@ -35,6 +35,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
      */
     @Override
     protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
+        log.info("异常处理");
         if(body == null){
             body = Result.error(
                     status.toString().replaceAll("_"," ").toLowerCase(),

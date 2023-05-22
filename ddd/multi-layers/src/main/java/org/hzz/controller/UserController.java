@@ -1,9 +1,13 @@
 package org.hzz.controller;
 
+import io.swagger.v3.oas.annotations.ExternalDocumentation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import io.swagger.v3.oas.annotations.tags.Tags;
 import org.hzz.domain.common.PageResult;
 import org.hzz.domain.common.Result;
 import org.hzz.domain.dto.UserDTO;
 import org.hzz.domain.dto.UserQueryDTO;
+import org.hzz.domain.vo.UserVO;
 import org.hzz.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,17 +15,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
-public class UserController {
+public class UserController implements UserApi {
 
     @Autowired
     private UserService userService;
 
-    @PostMapping("/save")
-    public Result<String> save( @Valid @RequestBody UserDTO userDTO) {
-        userService.save(userDTO);
-        return Result.success("新增用户成功");
-    }
+
 
 
     @PostMapping("/update/{id}")
@@ -54,5 +53,11 @@ public class UserController {
     @GetMapping("/exception")
     public Result<String> exception() {
         throw new RuntimeException("测试异常");
+    }
+
+    @Override
+    public Result<UserVO> queryById(Long userId) {
+        System.out.println(userId);
+        return null;
     }
 }
