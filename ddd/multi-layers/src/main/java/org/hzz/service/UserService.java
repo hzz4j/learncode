@@ -18,4 +18,6 @@ public interface UserService {
     int delete(Long id);
 
     PageResult<List<UserDTO>> query(PageQuery<UserDTO> pageQuery);
+
+    UserDTO queryById(Long id);
 }

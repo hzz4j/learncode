@@ -56,8 +56,12 @@ public class UserController implements UserApi {
     }
 
     @Override
-    public Result<UserVO> queryById(Long userId) {
-        System.out.println(userId);
-        return null;
+    public Result<UserVO> queryById(String userId) {
+        UserDTO userDTO = userService.queryById(Long.parseLong(userId));
+        UserVO userVO = new UserVO();
+        userVO.setId(userDTO.getId());
+        userVO.setName(userDTO.getUsername());
+        userVO.setPassword(userDTO.getPassword());
+        return Result.success(userVO);
     }
 }

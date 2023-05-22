@@ -14,7 +14,6 @@ import org.springframework.validation.annotation.Validated;
 import java.util.List;
 
 @Service
-@Validated
 public class UserServiceImpl implements UserService{
 
     @Autowired
@@ -42,4 +41,14 @@ public class UserServiceImpl implements UserService{
     public PageResult<List<UserDTO>> query(PageQuery<UserDTO> pageQuery) {
         return null;
     }
+
+    @Override
+    public UserDTO queryById(Long id) {
+        UserDO userDO = userMapper.selectById(id);
+        UserDTO userDTO = new UserDTO();
+        BeanUtils.copyProperties(userDO,userDTO);
+        return userDTO;
+    }
+
+
 }

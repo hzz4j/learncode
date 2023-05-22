@@ -1,7 +1,13 @@
 package org.hzz.controller;
 
+import com.alibaba.fastjson2.JSONWriter;
+import com.alibaba.fastjson2.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -28,8 +34,9 @@ public interface UserApi {
     }*/)
     @GetMapping("/queryById")
     default Result<UserVO> queryById(
-            @Valid @NotNull @RequestParam(name="userid",required = false)
-            Long userId){
+            @Parameter(description = "用户id",required = true,example = "1220708537638920191")
+            @Valid @NotNull @RequestParam(name="userid",required = true)
+            String userId){
         throw new NotImplementedException("接口未实现");
     }
 
@@ -38,7 +45,9 @@ public interface UserApi {
     @ApiResponse(responseCode = "200", description = "保存成功"
             , content = {@Content(mediaType = "application/json")})
     @PostMapping("/save")
-    default public Result<String> save(@Valid @RequestBody UserDTO userDTO) {
+    default  Result<String> save(
+            @Parameter(description = "用户信息",required = true)
+            @Valid @RequestBody UserDTO userDTO) {
         throw new NotImplementedException("接口未实现");
     }
 

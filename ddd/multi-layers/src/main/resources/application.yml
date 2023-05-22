@@ -4,7 +4,11 @@ server:
 
 spring:
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://localhost:3306/ddd?useSSL=false&serverTimezone=UTC
     password: Root.123456
     username: root
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

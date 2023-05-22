@@ -5,6 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @Data
+@Schema(description = "返回结果封装")
 public class Result<T>  {
 
     @Schema(description = "返回码",example = "200")

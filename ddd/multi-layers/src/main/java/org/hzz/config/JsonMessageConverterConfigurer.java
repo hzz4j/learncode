@@ -31,7 +31,9 @@ public class JsonMessageConverterConfigurer implements WebMvcConfigurer {
         FastJsonConfig config = new FastJsonConfig();
         config.setDateFormat("yyyy-MM-dd HH:mm:ss");
         config.setReaderFeatures(JSONReader.Feature.FieldBased, JSONReader.Feature.SupportArrayToBean);
-        config.setWriterFeatures(JSONWriter.Feature.WriteMapNullValue, JSONWriter.Feature.PrettyFormat);
+        config.setWriterFeatures(JSONWriter.Feature.WriteMapNullValue, JSONWriter.Feature.PrettyFormat,
+                JSONWriter.Feature.BrowserCompatible,
+                JSONWriter.Feature.WriteLongAsString);
         converter.setFastJsonConfig(config);
         converter.setDefaultCharset(StandardCharsets.UTF_8);
         List<MediaType> supportedMediaTypes = new ArrayList<>();
