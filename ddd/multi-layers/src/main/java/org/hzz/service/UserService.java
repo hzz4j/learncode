@@ -4,6 +4,7 @@ package org.hzz.service;
 import org.hzz.domain.common.PageQuery;
 import org.hzz.domain.common.PageResult;
 import org.hzz.domain.dto.UserDTO;
+import org.hzz.domain.dto.UserQueryDTO;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.Valid;
@@ -17,7 +18,7 @@ public interface UserService {
 
     int delete(Long id);
 
-    PageResult<List<UserDTO>> query(PageQuery<UserDTO> pageQuery);
+    PageResult<List<UserDTO>> query(PageQuery<UserQueryDTO> pageQuery);
 
     UserDTO queryById(Long id);
 }
