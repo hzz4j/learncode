@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PageQuery<T> {
     @Schema(description = "当前页(默认为1)",example = "1")
-    private Integer pageNum = 1;
+    private Integer pageNo = 1;
 
     @Schema(description = "每页行数(默认为20)",example = "20")
     private Integer pageSize = 20;

@@ -48,17 +48,19 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public PageResult<List<UserDTO>> query(PageQuery<UserQueryDTO> pageQuery) {
-        Page<UserDO> page = new Page<>(pageQuery.getPageNum(),pageQuery.getPageSize());
+        Page<UserDO> page = new Page<>(pageQuery.getPageNo(),pageQuery.getPageSize());
         UserDO userDO = new UserDO();
+        BeanUtils.copyProperties(pageQuery.getQuery(),userDO);
         QueryWrapper<UserDO> queryWrapper = new QueryWrapper<>(userDO);
 
         Page<UserDO> userDOPage = userMapper.selectPage(page, queryWrapper);
 
         // 结果解析
         final PageResult<List<UserDTO>> userDTOPageResult = new PageResult<>();
-        userDTOPageResult.setPageNum(userDOPage.getCurrent());
+        userDTOPageResult.setPageNo((int)userDOPage.getCurrent());
         userDTOPageResult.setPageSize((int)userDOPage.getSize());
         userDTOPageResult.setTotal(userDOPage.getTotal());
+        userDTOPageResult.setPageNum(userDOPage.getPages());
 
         List<UserDTO> userDTOList = Optional.ofNullable(userDOPage.getRecords())
                 .orElse(Collections.emptyList())

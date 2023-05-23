@@ -17,6 +17,9 @@ import java.util.Date;
 @Builder
 public class UserDTO {
 
+    @Schema(description = "用户id",example = "1220708537638920191")
+    private Long id;
+
     @Schema(description = "用户名",example = "Q10Viking")
     @NotBlank(message = "用户名不能为空")
     private String username;

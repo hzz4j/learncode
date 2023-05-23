@@ -10,7 +10,7 @@ public class UserVO {
     private Long id;
 
     @Schema(description = "用户名",example = "q10viking")
-    private String name;
+    private String username;
 
     @Schema(description = "密码",example = "**********")
     private String password;

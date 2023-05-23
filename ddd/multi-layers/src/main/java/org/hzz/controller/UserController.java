@@ -83,7 +83,8 @@ public class UserController implements UserApi {
     public Result<UserVO> queryById(String userId) {
         UserDTO userDTO = userService.queryById(Long.parseLong(userId));
         UserVO userVO = new UserVO();
-        userVO.setName(userDTO.getUsername());
+        userVO.setId(Long.parseLong(userId));
+        userVO.setUsername(userDTO.getUsername());
         userVO.setPassword(StringUtils.repeat("*",userDTO.getPassword().length()));
         return Result.success(userVO);
     }
