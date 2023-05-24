@@ -6,6 +6,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -70,6 +71,25 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(objectBody, status);
     }
 
+    @Override
+    protected ResponseEntity<Object> handleBindException(BindException exception, HttpHeaders headers, HttpStatus status, WebRequest request) {
+       logger.info("BindException");
+        Map<String, Object> objectBody = new LinkedHashMap<>();
+        objectBody.put("Current Timestamp", new Date());
+        objectBody.put("Status", status.value());
+
+        // Get all errors
+        List<String> exceptionalErrors = exception.getBindingResult()
+                .getFieldErrors()
+                .stream()
+                .map(x -> x.getField()+":"+x.getDefaultMessage())
+                .collect(Collectors.toList());
+
+        objectBody.put("Errors", exceptionalErrors);
+
+        return new ResponseEntity<>(objectBody, status);
+    }
+
     /**---------------------以下是扩展的异常--------------------------------------*/
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
     public Result<String> handleMySelfException(Exception e, WebRequest request){
@@ -81,4 +101,6 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
 
         return Result.error(e.toString(), ""+HttpStatus.INTERNAL_SERVER_ERROR.value(),msgBuilder.toString());
     }
+
+
 }
