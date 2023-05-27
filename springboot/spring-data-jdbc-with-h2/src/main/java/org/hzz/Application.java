@@ -1,6 +1,7 @@
 package org.hzz;
 
 import lombok.extern.slf4j.Slf4j;
+import org.hzz.student.StuRepository;
 import org.hzz.student.StudentJdbcRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -13,6 +14,9 @@ public class Application implements CommandLineRunner {
     @Autowired
     private StudentJdbcRepository studentJdbcRepository;
 
+    @Autowired
+    public StuRepository stuRepository;
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
     }
@@ -20,5 +24,7 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         log.info("Student id 10001 -> {}", studentJdbcRepository.findById(10001L));
+        log.info("Student  -> {}", stuRepository.findByName("hzz"));
+        log.info("Student  -> {}", stuRepository.findStudentOnName("Q10Viking"));
     }
 }
