@@ -12,7 +12,7 @@ import java.util.List;
 public class Transaction implements ValueObject<Transaction> {
     @Valid
     public final Money amount;
-    
+
     @NotNull
     @Size(min = 1)
     public final List< @Valid TransactionItem> items;

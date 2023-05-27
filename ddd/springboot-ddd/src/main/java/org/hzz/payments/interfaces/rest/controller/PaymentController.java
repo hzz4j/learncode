@@ -1,4 +1,4 @@
-package org.hzz.payments.interfaces.rest;
+package org.hzz.payments.interfaces.rest.controller;
 
 
 import org.hzz.payments.interfaces.rest.model.PerformPaymentRequest;
