@@ -4,19 +4,24 @@ package org.hzz.payments.interfaces.rest.controller;
 import org.hzz.payments.interfaces.rest.model.PerformPaymentRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.CompletableFuture;
 
 
 @RestController
-@RequestMapping("/payment")
-public class PaymentController {
+public class PaymentController implements PaymentApi{
     private static final Logger log = LoggerFactory.getLogger(PaymentController.class);
 
-    @PostMapping("/process")
-    public Object process(){
-        new PerformPaymentRequest();
-        return null;
+    @Override
+    public Callable<CompletableFuture<ResponseEntity<?>>> process(PerformPaymentRequest performPaymentRequest) {
+        log.info("request:{}",performPaymentRequest);
+
+        return ()->{
+            log.info("callable");
+            return CompletableFuture.completedFuture(ResponseEntity.ok().build());
+        };
     }
 }
