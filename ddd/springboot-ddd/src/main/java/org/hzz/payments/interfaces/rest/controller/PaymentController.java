@@ -20,16 +20,16 @@ public class PaymentController implements PaymentApi{
     private static final Logger log = LoggerFactory.getLogger(PaymentController.class);
 
     @Override
-    public Callable<CompletableFuture<ResponseEntity<?>>> process(PerformPaymentRequest performPaymentRequest) {
-        log.info("request:{}",performPaymentRequest);
+    public Callable<CompletableFuture<ResponseEntity<?>>> process(PerformPaymentRequest request) {
+        log.info("request:{}",request);
 
         return ()->{
             log.info("callable");
             PerformPayment performPayment = PerformPayment.commandOf(
-                    new CustomerId(performPaymentRequest.getCustormerId()),
-                    PaymentIntent.valueOf(performPaymentRequest.getPaymentIntent()),
-                    PaymentMethod.valueOf(performPaymentRequest.getPaymentMethod()),
-                    performPaymentRequest.getTransaction()
+                    new CustomerId(request.getCustormerId()),
+                    PaymentIntent.valueOf(request.getPaymentIntent()),
+                    PaymentMethod.valueOf(request.getPaymentMethod()),
+                    request.getTransaction()
             );
 
             return CompletableFuture.completedFuture(ResponseEntity.ok().build());

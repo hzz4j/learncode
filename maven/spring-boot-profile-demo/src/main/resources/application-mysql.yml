@@ -1,0 +1,5 @@
+hzz:
+  use: mysql
+
+server:
+  port: 8098
