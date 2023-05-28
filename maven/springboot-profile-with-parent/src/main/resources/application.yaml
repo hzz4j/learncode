@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: "@spring-boot.profiles.active@"
+
+server:
+  port: 8088

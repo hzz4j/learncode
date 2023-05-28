@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: "@spring-boot.profiles.active@"
+
+hzz:
+  use: xxx
