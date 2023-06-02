@@ -1,4 +1,4 @@
-package org.hzz.spring.entity;
+package org.hzz.spring.dto;
 
 import lombok.Data;
 

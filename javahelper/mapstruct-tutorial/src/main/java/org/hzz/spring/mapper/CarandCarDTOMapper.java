@@ -1,7 +1,7 @@
 package org.hzz.spring.mapper;
 
 import org.hzz.spring.entity.Car;
-import org.hzz.spring.entity.CarDto;
+import org.hzz.spring.dto.CarDto;
 import org.hzz.spring.service.CarService;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

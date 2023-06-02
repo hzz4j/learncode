@@ -3,9 +3,8 @@ package org.hzz.mapper;
 
 import lombok.extern.slf4j.Slf4j;
 import org.hzz.spring.entity.Car;
-import org.hzz.spring.entity.CarDto;
+import org.hzz.spring.dto.CarDto;
 import org.hzz.spring.mapper.CarandCarDTOMapper;
-import org.hzz.spring.service.CarService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
