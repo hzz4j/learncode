@@ -1,19 +1,23 @@
 package org.hzz.payments.domain.entity;
 
 import org.hzz.payments.domain.command.PerformPayment;
+import org.hzz.payments.domain.command.handler.PerformPaymentHandler;
 import org.hzz.payments.domain.shared.AggregateRoot;
 import org.hzz.payments.domain.vo.PaymentId;
 import org.springframework.context.ApplicationContext;
 
 public class Payment extends AggregateRoot<Payment, PaymentId> {
-    protected Payment(PaymentId paymentId, ApplicationContext applicationContext) {
+    public Payment(ApplicationContext applicationContext) {
+        super(new PaymentId(),applicationContext);
+    }
+    public Payment(PaymentId paymentId, ApplicationContext applicationContext) {
         super(paymentId, applicationContext);
     }
 
     @Override
     protected AggregateRoot<Payment, PaymentId>.AggregateRootBehavior initialBehavior() {
         return new AggregateRootBehaviorBuilder()
-                .setCommandHandler(PerformPayment.class,null)
+                .setCommandHandler(PerformPayment.class,getHandler(PerformPaymentHandler.class))
                 .build();
 
     }

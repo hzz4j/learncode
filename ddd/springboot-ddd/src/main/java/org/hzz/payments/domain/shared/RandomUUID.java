@@ -3,7 +3,7 @@ package org.hzz.payments.domain.shared;
 import java.util.UUID;
 
 public abstract class RandomUUID implements ValueObject<RandomUUID>{
-    private final String id;
+    public final String id;
 
     public RandomUUID() {
         this.id = String.format(getPrefix(), UUID.randomUUID().toString());
