@@ -8,9 +8,13 @@ spring:
       hibernate:
         format_sql: true
     defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create
   sql:
     init:
       mode: always
+      data-locations: classpath*:sql/data.sql
+      schema-locations: classpath*:sql/schema.sql
 logging:
   level:
     org.hibernate.sql: debug

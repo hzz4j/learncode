@@ -7,6 +7,8 @@ spring:
     username: root
     password: Root.123456
   jpa:
-    hibernate:
-      ddl-auto: create
     database-platform: org.hibernate.dialect.MySQL8Dialect
+  sql:
+    init:
+      data-locations: classpath*:sql/data.sql
+      schema-locations: classpath*:sql/schema.sql
