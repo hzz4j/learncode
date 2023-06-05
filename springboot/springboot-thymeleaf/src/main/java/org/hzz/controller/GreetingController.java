@@ -6,6 +6,8 @@ import org.hzz.entity.Greeting;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -18,10 +20,21 @@ public class GreetingController {
         return model.toString();
     }
 
-    @GetMapping("/greeting")
+    @GetMapping("/greeting") // 获取表单页面
     public String greetingForm(Model model) {
         log.info(model.toString());
         model.addAttribute("greeting", new Greeting());
-        return "greeting";
+        return "greeting/greeting";
     }
+
+
+    // 提交表单
+    @PostMapping("/greeting")
+    public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
+        model.addAttribute("greeting", greeting);
+        log.info(greeting.toString());
+        log.info(model.toString());
+        return "greeting/result";
+    }
+
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Getting Started: Handling Form Submission</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div th:switch="${employees}">
+  <h2 th:case="null">No employees yet!</h2>
+  <div th:case="*">
+    <h2>Employees</h2>
+    <h3 th:text="${msg}"></h3>
+    <table>
+      <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>contactNumber</th>
+        <th>workingArea</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="employee : ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.contactNumber}"></td>
+        <td th:text="${employee.workingArea}"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

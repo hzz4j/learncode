@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Submitted Employee Information</h2>
+<h3 th:text="${msg}"></h3>
+<table>
+    <tr>
+        <td>Name :</td>
+        <td th:text="${name}"></td>
+    </tr>
+    <tr>
+        <td>ID :</td>
+        <td th:text="${id}"></td>
+    </tr>
+    <tr>
+        <td>Contact Number :</td>
+        <td th:text="${contactNumber}"></td>
+    </tr>
+</table>
+</body>
+</html>
