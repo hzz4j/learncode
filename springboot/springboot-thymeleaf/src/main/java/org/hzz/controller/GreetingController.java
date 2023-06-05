@@ -14,9 +14,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 public class GreetingController {
 
+    /**
+     * hello。
+     * @param model
+     * @return model的toString。
+     */
     @GetMapping("/hello")
     @ResponseBody
-    public String hello(Model model) {
+    public String hello(final Model model) {
         return model.toString();
     }
 
@@ -30,7 +35,8 @@ public class GreetingController {
 
     // 提交表单
     @PostMapping("/greeting")
-    public String greetingSubmit(@ModelAttribute Greeting greeting, Model model) {
+    public String greetingSubmit(@ModelAttribute Greeting greeting,
+                                 final Model model) {
         model.addAttribute("greeting", greeting);
         log.info(greeting.toString());
         log.info(model.toString());
