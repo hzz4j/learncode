@@ -1,12 +1,13 @@
-package org.hzz.ddd;
+package org.hzz;
 
-import org.hzz.pathfinder.config.PathfinderApplicationContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Import;
+import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
-@Import({PathfinderApplicationContext.class})
+@EnableCaching  // 开启基于注解的缓存
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
